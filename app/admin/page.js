@@ -7,7 +7,6 @@ export default async function Page() {
 	let data = await prisma.user.findMany();
 
 	console.log(data);
-
 	return (
 		<>
 			<SignIn />
