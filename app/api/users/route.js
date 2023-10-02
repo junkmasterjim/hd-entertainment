@@ -46,7 +46,7 @@ export async function PATCH(req) {
 		const body = await req.json();
 		const { name, email, id } = body;
 
-		console.log(name, email, id);
+		// console.log(name, email, id);
 
 		if (!name) {
 			return NextResponse.json({
