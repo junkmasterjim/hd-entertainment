@@ -1,7 +1,7 @@
 import PageFooter from "@/app/components/PageFooter";
-import MissionStatement from "./MissionStatement";
-import HeroTiles from "./HeroTiles";
-import NewsletterCTA from "./NewsletterCTA";
+import MissionStatement from "@/app/components/MissionStatement";
+import HeroTiles from "@/app/components/HeroTiles";
+import NewsletterCTA from "@/app/components/NewsletterCTA";
 
 export default function Page() {
 	return (
