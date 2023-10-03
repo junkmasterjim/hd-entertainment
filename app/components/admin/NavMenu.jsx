@@ -1,22 +1,39 @@
 "use client";
 
-import { Menu, Home, Users2, LogOut, File } from "lucide-react";
+import {
+	Menu,
+	Home,
+	Users2,
+	LogOut,
+	File,
+	ImageIcon,
+	Boxes,
+	HelpingHand,
+} from "lucide-react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { pageRoutes } from "@/pageRoutes";
 
 const navigation = [
-	{ name: "Home", route: "/admin/dashboard", icon: Home },
-	{ name: "Users", route: "/admin/dashboard", icon: Users2 },
+	{ name: "Home", route: "/admin", icon: Home },
+	{ name: "Users", route: "/admin/users", icon: Users2 },
+	{ name: "Portfolio", route: "/admin/portfolio", icon: ImageIcon },
+	{ name: "Products", route: "/admin/products", icon: Boxes },
+	{ name: "Services", route: "/admin/services", icon: HelpingHand },
+	{ name: "Log Out", route: "/api/auth/signout", icon: LogOut },
 ];
 
 export default function NavMenu() {
+	const { data: session, status } = useSession();
+
 	return (
 		<>
 			{/* Static sidebar for desktop */}
-			<div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+			<div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col ">
 				{/* Sidebar component, swap this element with another sidebar if you like */}
-				<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-secondary-focus px-6 pt-4">
+				<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-secondary-focus overflow-hidden px-6 pt-4">
 					<div className="flex h-16 items-center px-2">
 						<Image
 							height={96}
@@ -40,27 +57,22 @@ export default function NavMenu() {
 											</Link>
 										</li>
 									))}
-									<li className="text-lg">
-										<Link href={"/admin"}>
-											<LogOut className="h-4 w-4 mr-2" />
-											Exit Dashboard
-										</Link>
-									</li>
 								</ul>
 							</li>
+
 							<li>
 								<ul role="list" className="-mx-2 pb-4 space-y-1 menu">
 									<p className="menu-title">Public Pages</p>
 									<li className="text-lg">
 										<Link target="_blank" href={"/"}>
-											<File className="h-4 w-4 mr-2" />
+											<File className="h-5 w-5 mr-2" />
 											Home
 										</Link>
 									</li>
 									{pageRoutes.map((route) => (
 										<li key={route.name} className="text-lg">
 											<Link target="_blank" href={route.route}>
-												<File className="h-4 w-4 mr-2" />
+												<File className="h-5 w-5 mr-2" />
 
 												{route.name}
 											</Link>
@@ -70,6 +82,19 @@ export default function NavMenu() {
 							</li>
 						</ul>
 					</nav>
+					<div className="flex py-4 items-center gap-4 pointer-events-none">
+						<Image
+							alt=""
+							className=" rounded-full"
+							src={session.user.image}
+							height={32}
+							width={32}
+						/>
+						<div className="flex flex-col">
+							<p>{session.user.name}</p>
+							<p className=" stat-desc">{session.user.email}</p>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -122,18 +147,12 @@ export default function NavMenu() {
 									{navigation.map((route) => (
 										<li key={route.name} className="text-lg">
 											<Link href={route.route}>
-												<route.icon className="h-4 w-4 mr-2" />
+												<route.icon className="h-5 w-5 mr-2" />
 
 												{route.name}
 											</Link>
 										</li>
 									))}
-									<li className="text-lg">
-										<Link href={"/admin"}>
-											<LogOut className="h-4 w-4 mr-2" />
-											Exit Dashboard
-										</Link>
-									</li>
 								</ul>
 							</li>
 							<li>
@@ -142,7 +161,7 @@ export default function NavMenu() {
 									{pageRoutes.map((route) => (
 										<li key={route.name} className="text-lg">
 											<Link target="_blank" href={route.route}>
-												<File className="h-4 w-4 mr-2" />
+												<File className="h-5 w-5 mr-2" />
 
 												{route.name}
 											</Link>

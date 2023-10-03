@@ -10,14 +10,8 @@ export async function GET() {
 export async function POST(req) {
 	try {
 		const body = await req.json();
+
 		const { name, email } = body;
-		if (!name) {
-			return NextResponse.json({
-				route: "[USERS_POST]",
-				status: "ERR 400: BAD REQUEST",
-				message: "Name is required.",
-			});
-		}
 
 		if (!email) {
 			return NextResponse.json({
@@ -29,14 +23,15 @@ export async function POST(req) {
 
 		const newUser = await prismadb.user.create({
 			data: {
-				name: body.name,
-				email: body.email,
+				name: `${body.name}` || null,
+				email: `${body.email}`,
 			},
 		});
 		return NextResponse.json(newUser);
 	} catch (err) {
 		return NextResponse.json({
 			message: "500: Internal Server Error",
+			error: err,
 		});
 	}
 }

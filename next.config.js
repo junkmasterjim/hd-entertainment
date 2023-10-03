@@ -6,6 +6,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "*.previews.dropboxusercontent.com",
 			},
+			{
+				protocol: "https",
+				hostname: "*.googleusercontent.com",
+			},
 		],
 		formats: ["image/avif", "image/webp"],
 	},

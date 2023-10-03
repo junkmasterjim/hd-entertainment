@@ -1,9 +1,11 @@
-import SignIn from "@/app/components/auth/SignIn";
+import UsersCard from "@/app/components/admin/UsersCard";
 
-export default async function Page() {
+export default function Page() {
+	// const users = await prismadb.user.findMany();
+
 	return (
-		<>
-			<SignIn />
-		</>
+		<div>
+			<UsersCard />
+		</div>
 	);
 }
