@@ -11,19 +11,17 @@ export default function MissionStatement() {
 		<div id="about" className="-my-24 pt-12 sm:-my-12 pb-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-					<h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+					<h2 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl underline decoration-from-font ">
 						High Definition
 					</h2>
 					<div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
 						<div className="lg:w-full lg:max-w-2xl lg:flex-auto">
 							<p className="text-xl leading-8 text-neutral dark:text-neutral-content">
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
-								ullam eum iure adipisci nam deserunt nisi odio illo. Doloribus
-								velit quas nemo assumenda natus quia explicabo eius in
-								exercitationem eaque earum, cum aut delectus iusto libero
-								quaerat nobis debitis adipisci excepturi, distinctio tempore
-								amet. Illo cumque sequi obcaecati mollitia, illum libero
-								accusamus in nihil atque consequuntur quam at odit?
+								I'm HD, a multi-talented professional hailing from the state of
+								New Hampshire. My expertise lies in music production, graphic
+								design, and animation. I've had the pleasure of working in
+								collaboration with notable entities such as 808mafia, YSL
+								Records, and Nike.
 							</p>
 							<div className="mt-10 relative z-10 flex items-center gap-x-6">
 								<Link
