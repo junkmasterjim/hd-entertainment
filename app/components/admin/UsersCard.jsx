@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Loading from "@/app/admin/loading";
 import { toast, Toaster } from "react-hot-toast";
 import { MoreHorizontal } from "lucide-react";
@@ -52,12 +52,32 @@ export default function UsersCard() {
 		router.refresh();
 	};
 
-	const onDelete = async () => {
+	const onDelete = async (idInput) => {
 		await fetch("/api/users", {
 			method: "DELETE",
 			headers: { "Content-type": "application/json" },
 			body: JSON.stringify({
-				id: idToPatch,
+				id: idInput,
+			}),
+		})
+			.then((response) => {
+				console.log(response.status);
+				return response.json();
+			})
+			.then((data) => console.log(data));
+
+		router.refresh();
+	};
+
+	const createUser = async (e) => {
+		e.preventDefault();
+
+		await fetch("/api/users", {
+			method: "POST",
+			headers: { "Content-type": "application/json" },
+			body: JSON.stringify({
+				name: nameInput,
+				email: emailInput,
 			}),
 		})
 			.then((response) => {
@@ -169,8 +189,11 @@ export default function UsersCard() {
 															<div className="flex mt-8 container justify-between">
 																<div
 																	type={"button"}
-																	className="btn btn-error text-primary"
-																	onClick={onDelete}
+																	className="btn btn-error text-secondary dark:text-primary"
+																	// onClick={onDelete}
+																	onClick={() =>
+																		document.getElementById(user.id).showModal()
+																	}
 																>
 																	Delete
 																</div>
@@ -191,12 +214,110 @@ export default function UsersCard() {
 													<button></button>
 												</form>
 											</dialog>
+											<dialog id={user.id} className="modal">
+												<div className="modal-box max-w-sm bg-secondary text-primary">
+													<h3 className="font-bold text-lg">Confirm Delete</h3>
+													<p className="py-4">
+														Confirm deletion of{" "}
+														<span className="font-bold">{user.email}</span>?
+														<br />
+														<br />
+														This action is irreversible.
+													</p>
+													<div className="modal-action flex justify-between">
+														<form method="dialog">
+															{/* if there is a button in form, it will close the modal */}
+															<button className="btn btn-primary btn-sm text-secondary">
+																Cancel
+															</button>
+														</form>
+														<button
+															className="btn btn-sm btn-error text-secondary dark:text-primary"
+															onClick={() => {
+																onDelete(user.id);
+																document.getElementById(user.id);
+															}}
+														>
+															Delete
+														</button>
+													</div>
+												</div>
+												<form method="dialog" className="modal-backdrop">
+													<button></button>
+												</form>
+											</dialog>
 										</td>
 									</tr>
 								))}
 							</tbody>
 						</table>
 					)}
+				</div>
+				<div className="flex justify-between py-8">
+					<span></span>
+					<button
+						onClick={() => document.getElementById("createUser").showModal()}
+						className="btn btn-m btn-ghost"
+					>
+						Create A New User
+					</button>
+					<dialog id="createUser" className="modal">
+						<div className="modal-box bg-primary text-secondary">
+							<h3 className="font-bold flex flex-col text-2xl">
+								Create a User
+								<span className=" text-secondary/75 text-lg">
+									All fields required
+								</span>
+								<div className="divider before:bg-secondary/50 after:bg-secondary/50 m-0"></div>
+							</h3>
+							<div className="">
+								<form onSubmit={createUser} className="form-control">
+									<label
+										htmlFor="nameInput"
+										className="label font-bold text-secondary/75"
+									>
+										Name:
+									</label>
+									<input
+										required
+										onChange={handleNameChange}
+										id="nameInput"
+										value={nameInput}
+										type="text"
+										minLength={1}
+										className="input text-secondary placeholder:text-secondary/75 bg-primary-focus/50"
+										placeholder="Enter a name."
+									/>
+									<label
+										htmlFor="emailInput"
+										className="label font-bold text-secondary/75"
+									>
+										Email:
+									</label>
+									<input
+										required
+										value={emailInput}
+										onChange={handleEmailChange}
+										id="emailInput"
+										type="email"
+										className="input text-secondary placeholder:text-secondary/75 bg-primary-focus/50"
+										placeholder="Enter an email address."
+									/>
+									<div className="flex mt-8 justify-end">
+										<button
+											type="submit"
+											className="btn btn-secondary text-primary"
+										>
+											Add User
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<form method="dialog" className="modal-backdrop">
+							<button></button>
+						</form>
+					</dialog>
 				</div>
 			</div>
 			{users?.length == 0 ? (
