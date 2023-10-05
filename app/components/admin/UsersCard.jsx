@@ -33,60 +33,77 @@ export default function UsersCard() {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-
-		await fetch("/api/users", {
-			method: "PATCH",
-			headers: { "Content-type": "application/json" },
-			body: JSON.stringify({
-				id: idToPatch,
-				name: nameInput,
-				email: emailInput,
-			}),
-		})
-			.then((response) => {
-				console.log(response.status);
-				return response.json();
+		try {
+			await fetch("/api/users", {
+				method: "PATCH",
+				headers: { "Content-type": "application/json" },
+				body: JSON.stringify({
+					id: idToPatch,
+					name: nameInput,
+					email: emailInput,
+				}),
 			})
-			.then((data) => console.log(data));
+				.then((response) => {
+					console.log(response.status);
+					return response.json();
+				})
+				.then((data) => console.log(data));
 
-		router.refresh();
+			router.refresh();
+			toast.success("User updated.", { duration: 2500 });
+		} catch (err) {
+			console.log(err);
+			toast.error("There was an error.");
+		}
 	};
 
 	const onDelete = async (idInput) => {
-		await fetch("/api/users", {
-			method: "DELETE",
-			headers: { "Content-type": "application/json" },
-			body: JSON.stringify({
-				id: idInput,
-			}),
-		})
-			.then((response) => {
-				console.log(response.status);
-				return response.json();
+		try {
+			await fetch("/api/users", {
+				method: "DELETE",
+				headers: { "Content-type": "application/json" },
+				body: JSON.stringify({
+					id: idInput,
+				}),
 			})
-			.then((data) => console.log(data));
+				.then((response) => {
+					console.log(response.status);
+					return response.json();
+				})
+				.then((data) => console.log(data));
+			toast.success("User deleted.", { duration: 2500 });
 
-		router.refresh();
+			router.refresh();
+		} catch (err) {
+			console.log(err);
+			toast.error("There was an error.");
+		}
 	};
 
 	const createUser = async (e) => {
 		e.preventDefault();
 
-		await fetch("/api/users", {
-			method: "POST",
-			headers: { "Content-type": "application/json" },
-			body: JSON.stringify({
-				name: nameInput,
-				email: emailInput,
-			}),
-		})
-			.then((response) => {
-				console.log(response.status);
-				return response.json();
+		try {
+			await fetch("/api/users", {
+				method: "POST",
+				headers: { "Content-type": "application/json" },
+				body: JSON.stringify({
+					name: nameInput,
+					email: emailInput,
+				}),
 			})
-			.then((data) => console.log(data));
+				.then((response) => {
+					console.log(response.status);
+					return response.json();
+				})
+				.then((data) => console.log(data));
 
-		router.refresh();
+			router.refresh();
+			toast.success("User added.", { duration: 2500 });
+		} catch (err) {
+			console.log(err);
+			toast.error("There was an error.");
+		}
 	};
 
 	return (
@@ -327,7 +344,7 @@ export default function UsersCard() {
 			) : (
 				<></>
 			)}
-			<Toaster position="bottom-right" reverseOrder={false} />
+			<Toaster position={"top-center"} reverseOrder={false} />
 		</div>
 	);
 }
