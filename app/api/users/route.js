@@ -69,7 +69,7 @@ export async function PATCH(req) {
 
 			const updateUser = await prismadb.user.update({
 				where: {
-					email: email,
+					id: id,
 				},
 				data: {
 					name: name,
@@ -90,19 +90,19 @@ export async function DELETE(req) {
 	if (session) {
 		try {
 			const body = await req.json();
-			const { email } = body;
+			const id = body?.id;
 
-			if (!email) {
+			if (!id) {
 				return NextResponse.json({
-					route: "[USERS_PATCH]",
+					route: "[USERS_DELETE]",
 					status: "ERR 400: BAD REQUEST",
-					message: "Email is required.",
+					message: "ID is required.",
 				});
 			}
 
 			const deleteUser = await prismadb.user.delete({
 				where: {
-					email: email,
+					id: id,
 				},
 			});
 
