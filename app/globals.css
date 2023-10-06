@@ -71,6 +71,9 @@
 .slide-in-left:nth-of-type(4) {
 	animation-delay: 300ms;
 }
+.slide-in-left:nth-of-type(5) {
+	animation-delay: 400ms;
+}
 
 @-webkit-keyframes top-reveal {
 	100% {

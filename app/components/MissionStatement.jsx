@@ -18,7 +18,7 @@ export default function MissionStatement() {
 						<div className="lg:w-full lg:max-w-2xl lg:flex-auto">
 							<p className="text-xl leading-8 text-neutral dark:text-neutral-content">
 								{
-									"I'm HD, a multi-talented professional hailing from the state of New Hampshire. My expertise lies in music production, graphic design, and animation. I've had the pleasure of working in collaboration with notable entities such as 808mafia, YSL Records, and Nike."
+									"I'm HD, a multi-talented professional hailing from the state of New Hampshire. My expertise lies in music production, graphic design, and animation. I've had the pleasure of working in collaboration with notable entities such as 808mafia, YSL Records, Nike, and more."
 								}
 							</p>
 							<div className="mt-10 relative z-10 flex items-center gap-x-6">
