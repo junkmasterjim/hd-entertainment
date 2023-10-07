@@ -44,9 +44,10 @@ export default function HeroTiles() {
 								<div className="ml-auto w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
 									<div className="relative">
 										<Image
+											loading="lazy"
 											width={208}
 											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACBORNBmhXfMydKRg7IT1881ppbA2P4DWUH3uI2gloWMOoW3Dr1mSzFfheG4wnV6Qx4lt2DCgr7h2BtPnb8hVVYQKhC5K7A_Wq9rEiAKqvAO4I6GGkKQPGCZ1Jyzl1zWBnS_dKkQ5x89gxKrlHjadNXazG1RN6nAJHx4cNJtMy0P6oKkEN2IHrvQC3yiuZjANCrdifCRJ5zyYcd8Txx_mgpd5wTEBsMuQDwH7VXar8IREkg8RfPGs0m-vk9HzMM35nIW4b-Yfu198ZCLLKCuia0l9ik2rw2ESsDRQbcCs6ZjoQ/p.jpeg?size=512x512&size_mode=1"
+											src="https://www.dropbox.com/scl/fi/1omsrj8w79fmpsc2ghinp/testing-loop-kit.jpg?rlkey=2gxzks2y6pq7axpefh3d2kmon&dl=1"
 											alt=""
 											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -54,9 +55,10 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
+											loading="lazy"
 											width={208}
 											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACDXS32Yvft6PLLa5oroEl0BcQuwzvefMMyVIjF9JDYUGCeiY-JmvRxJi-AvALG1EUbta8lPTrOjBxz-IFpBXlSzVcL0dEMSrXAqiO4xbY6Pt6lM4O21SK9Pzc3Lve55KBsnqlioZN0_sffBeSTvgk1xj1MFFZb1_t3Q9xpLmiLGv9Q-41jRAE53Zum269GUs8YPiTkuT8hhB30Fg0fCNhI9vC7-REcD55ZVWxuqFqdohfkEmTwMMS_h2oS7kvQZ3SN1NtB0gC2ZY1z8DkP_HRHE_mPnxmQsG9hKW2fY9S0phA/p.jpeg?size=512x512&size_mode=1"
+											src="https://www.dropbox.com/scl/fi/sv9xg96pyx25kxoslq81b/tre-shit.jpg?rlkey=y0n9o8u8sxm0osbufejvkwazq&dl=1"
 											alt=""
 											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -69,9 +71,21 @@ export default function HeroTiles() {
 								<div className="mr-auto w-52 flex-none sm:space-y-8 space-y-4 sm:mr-0 sm:pt-52 lg:pt-36">
 									<div className="relative">
 										<Image
+											loading="lazy"
 											width={208}
 											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACCDyGDDzL1ovUwTH7OT0t1jOzLzP6G-WKAkXaEIjENTlqtWLmF3SYqlqj3K-Lq7G042K_PgwAv9ot5ca54FuObY8CltcsiraTsxKRFBP2gEm4t1nPkmHvvamY10cdzy_xjPk_16u3orN4970ML4l-pRBlWrn15q7melSg3lqWrdDlq-nYcjwKxLjMIhAYqCHNq5Q9QSD8s2RacjKGqtf0jq9f4Ur2NQgJYuCQYtuZEkHwX-2jj_U9zSh5dnUhJd6BEwomoT3wj_31iFb5e2D8zt3_CCTHbZdwK0fNBAig2XDg/p.jpeg?size=512x512&size_mode=1"
+											src="https://www.dropbox.com/s/snv89a9yzd8qldx/tmag%20shit.jpg?dl=1"
+											alt=""
+											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+										/>
+										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+									</div>
+									<div className="relative">
+										<Image
+											loading="lazy"
+											width={208}
+											height={208}
+											src="https://www.dropbox.com/scl/fi/ezbxhb5dcsqbbho2be2wb/astronaut.jpg?rlkey=feanh8hjxfafgi02fqbs57njl&dl=1"
 											alt=""
 											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -81,17 +95,7 @@ export default function HeroTiles() {
 										<Image
 											width={208}
 											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACBnzwfc0r8F27hL9YeST-JJJcN2xf6AOe92myqiRdm3kYVUXIEYGsWyNwZAEphCgCkt4DXKtzgSdDByGCSzkxcB1LIDi30F9l4eLAKe-ba0IfBujx0oz0zCxAFAztYpGXt8bb9zGXa3o-Tzb9ChHR8aeneADj3UTHvQJYTvqDP6drt4eyfYABekTNH_wYRhtO6FSFCoyWu7933OXxEnxn7jl5Yiv0Nc4U-ZdzLRVcwmEZhMRS-Th7hn3_rhe3Bym2cmO-JuezmRTybb1CQI1yyw7Pg4CimkgHoFRO1BlFT9KA/p.jpeg?size=512x512&size_mode=1"
-											alt=""
-											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										/>
-										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
-									</div>
-									<div className="relative">
-										<Image
-											width={208}
-											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACBs9VYIpUk_oU4-reNhXv4y4ytWJ74J9OOWChVXcTw0YLthdNIrkuV4_xD6nGf5RmrkeMBWFvv1R1WTtdlmigYtij6AT6-9gScwTJRN-QSciAiIOQ57CTK5nDT2fari-N5t3FsblcENKA_yKuTOqH1LKRm-Wje2KOxN1WPc66qAFAhqu017LdYfF5KVhitK7zzRuFKvtC87SIV0l5VMg2l-_iKq8mEXVCxOzCmIEK_WhNSGd5E3MLLfj49SU-CFQUcEPMizkV9TYTivJXDcwJw7BbvPEjIZNE5bY2SKel518g/p.jpeg?size=512x512&size_mode=1"
+											src="https://www.dropbox.com/scl/fi/1wzfa6ye3eh389asonx3h/MM-2.jpg?rlkey=56qfp93j51rjbb5o1eruofogl&dl=1"
 											alt=""
 											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -104,9 +108,10 @@ export default function HeroTiles() {
 								<div className="w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:pt-0">
 									<div className="relative">
 										<Image
+											loading="lazy"
 											width={208}
 											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACAyVKI6n2q_QVM5nGkSNGvU-7hmlsQNwR2AMRHY8ZKibQeOmqyNYMOnYZKTlWuM32OF4hM52ytnGtX50UTe9dcL1kUBRxGiPDDYBJ0h6LiNJHBCrbOnzDkNXjmHkinLQOlch5VgHlJNrH7ad1ATlVI6Q3LAaPzU2XOFXd-E-uZUHonjDnjHrb7hSOV5ABUp5_G0Ort80YbD7uuhtnY2Qun-1bVRGFyF1zE4OXv3BJE-8iy5mbb3QzkNeesOs5G5IpnqLMCGXSQgCW0mk4V3DOBUaPlwLLB1jZHqhBdF33YUPQ/p.jpeg?size=512x512&size_mode=1"
+											src="https://www.dropbox.com/scl/fi/lus812ygdap6eqrtk4qun/fendii-art.jpg?rlkey=fkrqjqagaa7qo2yimb84jxv1t&dl=1"
 											alt=""
 											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -114,9 +119,10 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
+											loading="lazy"
 											width={208}
 											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACCqJABBJP26EmH5OxZ72zaAbmvdEb66JtQFT6JHAsvfWfOOrJj1GO8_Fi1xi-Uwgkh2qC5cukPJOu0EpZkrv27JibzFEfcv2Qqe8RnmTgd1umvb1AXiSUZ1FAPmih7DKA0c-556LXtznHwRlqMJ7Jjo-kicHr_VqX8XMfac5eUhIxSjcaVc3uyzCePlLaYteh1My-GtndEH9KPbI-CmCZg1c8aXQPkm1VGw_59BMa9m5fu84E9QQBPeSt58ci6sl0_WTvK_kRh9F91vqRD9twUcGXVB9TNWzKWGd1atScl5Yw/p.jpeg?size=512x512&size_mode=1"
+											src="https://www.dropbox.com/scl/fi/9wivg9jjufwdv5xik6qef/DEMONS-COVER-ART-yfk.hd.jpg?rlkey=q9x1pgsnopupchfv6i00hnkxm&dl=1"
 											alt=""
 											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -124,9 +130,10 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
+											loading="lazy"
 											width={208}
 											height={208}
-											src="https://uc5a1b9bcddbfdcf24f27aa76912.previews.dropboxusercontent.com/p/thumb/ACCtOGu76yKmu4IcEexcLaH3rkil-f46cUJbuY7m_rv7jb_vzHFA5RFy1zRf6pidHTEsboJuo0crQt3MFNZXHN_BNQPLsSFOdOLmKCeEObA0WggBge2zBqBzttPjmZV_IBPzB3TRpIb_vnETRwc9Nly7eWZ6_JFPnvHsKXyExtC5g7Kyz72e5ODaN3oDUUwECW7Png935SgWVTWCm4kWYfZSpJUv-QEdY_LPAqsqDUTKvHx3ijmVi9X1Y1ih0oGYKFD2IIIeJTaPliTnovb4JqYlXU3ss0cfUOtP-tlrxNiWWg/p.jpeg?size=512x512&size_mode=1"
+											src="https://www.dropbox.com/scl/fi/38f6zdj5hv8if3ghytaxi/suto-shit-1.jpg?rlkey=h5t8sgzck5pr6bnpodzr2zl8e&dl=1"
 											alt=""
 											className="aspect-[1/1] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>

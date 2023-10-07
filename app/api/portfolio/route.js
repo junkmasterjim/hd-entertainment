@@ -107,7 +107,7 @@ export async function DELETE(req) {
 				});
 			}
 
-			const deleteImage = await prismadb.user.delete({
+			const deleteImage = await prismadb.portfolioImage.delete({
 				where: {
 					id: id,
 				},

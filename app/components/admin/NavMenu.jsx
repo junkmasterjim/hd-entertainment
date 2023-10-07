@@ -36,6 +36,7 @@ export default function NavMenu() {
 				<div className="flex grow flex-col gap-y-5 overflow-y-auto bg-secondary-focus overflow-hidden px-6 pt-4">
 					<div className="flex h-16 items-center px-2">
 						<Image
+							loading="lazy"
 							height={96}
 							width={96}
 							alt={"HD Entertainment"}
@@ -84,6 +85,7 @@ export default function NavMenu() {
 					</nav>
 					<div className="flex py-4 items-center gap-4 pointer-events-none">
 						<Image
+							loading="lazy"
 							alt=""
 							className=" rounded-full"
 							src={session.user.image}

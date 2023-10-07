@@ -8,6 +8,10 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "www.dropbox.com",
+			},
+			{
+				protocol: "https",
 				hostname: "*.googleusercontent.com",
 			},
 		],

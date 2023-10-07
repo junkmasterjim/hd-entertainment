@@ -42,6 +42,7 @@ export default function HdLogoBG() {
 			{isSafari ? (
 				<div className="relative mt-[-5rem] py-24 floating mix-blend-difference dark:mix-blend-screen">
 					<Image
+						loading="lazy"
 						src={"/HDhomelogo.svg"}
 						alt=""
 						width={1920}

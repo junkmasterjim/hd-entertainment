@@ -8,6 +8,7 @@ export default function PageFooter() {
 			<aside>
 				<Link className="hover:scale-110 transition-all" href={"/"}>
 					<Image
+						loading="lazy"
 						width={50}
 						height={50}
 						src={"/hd_simple_logo.svg"}

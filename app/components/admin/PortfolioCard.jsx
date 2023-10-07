@@ -2,9 +2,9 @@
 
 import Loading from "@/app/admin/loading";
 import AddContent from "@/app/components/admin/AddContent";
+import PortfolioTable from "@/app/components/admin/PortfolioTable";
 
 import { toast, Toaster } from "react-hot-toast";
-import { MoreHorizontal } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function PortfolioCard() {
@@ -20,7 +20,9 @@ export default function PortfolioCard() {
 					</div>
 				</div>
 				<div className="divider mb-0" />
-				<div className="overflow-x-auto relative z-10"></div>
+				<div className="overflow-x-auto relative z-10">
+					<PortfolioTable />
+				</div>
 			</div>
 
 			<Toaster position={"top-center"} reverseOrder={false} />
