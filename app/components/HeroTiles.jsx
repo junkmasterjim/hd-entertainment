@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,12 +30,6 @@ export default function HeroTiles() {
 									>
 										Learn More <span aria-hidden="true">→</span>
 									</Link>
-									{/* <a
-										href="#"
-										className="bg-transparent dark:bg-transparent text-primary  btn border-neutral hover:bg-neutral-focus hover:text-secondary dark:hover:text-primary dark:border-secondary hover:border-none"
-									>
-										Contact
-									</a> */}
 								</div>
 							</div>
 
