@@ -3,5 +3,5 @@ export const pageRoutes = [
 	{ name: "Portfolio", route: "/portfolio" },
 	{ name: "Products", route: "/products" },
 	{ name: "Services", route: "/services" },
-	{ name: "Contact", route: "/about#contact" },
+	{ name: "Contact", route: "/contact" },
 ];

@@ -110,7 +110,7 @@ export default function UsersCard() {
 		<div className="card overflow-x-hidden bg-secondary-focus text-primary shadow-xl md:py-2 md:px-16 mb-12">
 			<div className="card-body">
 				<div className="flex justify-between">
-					<h2 className=" card-title text-2xl">Users</h2>
+					<h2 className=" card-title text-xl sm:text-2xl">Users</h2>
 					<div className="flex gap-8">
 						{/* <p className="btn btn-sm btn-ghost">Export to CSV</p> */}
 						<button
