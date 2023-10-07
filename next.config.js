@@ -4,10 +4,6 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "*.previews.dropboxusercontent.com",
-			},
-			{
-				protocol: "https",
 				hostname: "www.dropbox.com",
 			},
 			{
