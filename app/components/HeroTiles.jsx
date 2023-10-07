@@ -37,8 +37,9 @@ export default function HeroTiles() {
 								{/* Grid Left */}
 								<div className="ml-auto w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
 									<div className="relative">
-										<Image
+										<img
 											priority
+											placeholder="empty"
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/1omsrj8w79fmpsc2ghinp/testing-loop-kit.jpg?rlkey=2gxzks2y6pq7axpefh3d2kmon&dl=1"
@@ -48,8 +49,9 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<Image
+										<img
 											priority
+											placeholder="empty"
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/sv9xg96pyx25kxoslq81b/tre-shit.jpg?rlkey=y0n9o8u8sxm0osbufejvkwazq&dl=1"
@@ -64,8 +66,9 @@ export default function HeroTiles() {
 
 								<div className="mr-auto w-52 flex-none sm:space-y-8 space-y-4 sm:mr-0 sm:pt-52 lg:pt-36">
 									<div className="relative">
-										<Image
+										<img
 											priority
+											placeholder="empty"
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/s/snv89a9yzd8qldx/tmag%20shit.jpg?dl=1"
@@ -75,8 +78,9 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<Image
+										<img
 											priority
+											placeholder="empty"
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/ezbxhb5dcsqbbho2be2wb/astronaut.jpg?rlkey=feanh8hjxfafgi02fqbs57njl&dl=1"
@@ -86,7 +90,7 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<Image
+										<img
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/1wzfa6ye3eh389asonx3h/MM-2.jpg?rlkey=56qfp93j51rjbb5o1eruofogl&dl=1"
@@ -101,8 +105,9 @@ export default function HeroTiles() {
 
 								<div className="w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:pt-0">
 									<div className="relative">
-										<Image
+										<img
 											priority
+											placeholder="empty"
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/lus812ygdap6eqrtk4qun/fendii-art.jpg?rlkey=fkrqjqagaa7qo2yimb84jxv1t&dl=1"
@@ -112,8 +117,9 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<Image
+										<img
 											priority
+											placeholder="empty"
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/9wivg9jjufwdv5xik6qef/DEMONS-COVER-ART-yfk.hd.jpg?rlkey=q9x1pgsnopupchfv6i00hnkxm&dl=1"
@@ -123,8 +129,9 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<Image
+										<img
 											priority
+											placeholder="empty"
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/38f6zdj5hv8if3ghytaxi/suto-shit-1.jpg?rlkey=h5t8sgzck5pr6bnpodzr2zl8e&dl=1"

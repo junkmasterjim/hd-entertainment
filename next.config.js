@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		domains: ["dropbox.com", "googleusercontent.com", "hd-next13.vercel.app"],
 		remotePatterns: [
 			{
 				protocol: "https",
