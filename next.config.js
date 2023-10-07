@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		domains: ["dropbox.com", "googleusercontent.com"],
+		domains: ["dropbox.com", "googleusercontent.com", "hd-next13.vercel.app"],
 		remotePatterns: [
 			{
 				protocol: "https",
@@ -10,6 +10,10 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "*.googleusercontent.com",
+			},
+			{
+				protocol: "https",
+				hostname: "*.hd-next13.vercel.app",
 			},
 		],
 		formats: ["image/avif", "image/webp"],
