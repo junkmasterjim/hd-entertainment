@@ -4,14 +4,19 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import Loading from "@/app/admin/loading";
-import { MoreHorizontal } from "lucide-react";
+import { Copy, MoreHorizontal } from "lucide-react";
+import { toast, Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function PortfolioTable() {
 	const [isLoading, setIsLoading] = useState();
+	const [idToPatch, setIdToPatch] = useState();
 
 	const [portfolio, setPortfolio] = useState();
 	const [nameInput, setNameInput] = useState("");
 	const [urlInput, setUrlInput] = useState("");
+
+	const router = useRouter();
 
 	const handleNameChange = (e) => {
 		setNameInput(e.target.value);
@@ -21,10 +26,60 @@ export default function PortfolioTable() {
 		setUrlInput(e.target.value);
 	};
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault();
 
+		try {
+			await fetch("/api/portfolio", {
+				method: "PATCH",
+				headers: { "Content-type": "application/json" },
+				body: JSON.stringify({
+					id: idToPatch,
+					name: nameInput,
+					imageUrl: urlInput,
+				}),
+			})
+				.then((response) => {
+					console.log(response.status);
+					return response.json();
+				})
+				.then((data) => console.log(data));
+
+			router.refresh();
+			toast.success("Image updated.", {
+				duration: 2500,
+			});
+		} catch (err) {
+			console.log(err);
+			toast.error("There was an error.");
+		}
+
 		console.log(nameInput, urlInput);
+	};
+
+	const onDelete = async (id) => {
+		try {
+			await fetch("/api/portfolio", {
+				method: "DELETE",
+				headers: { "Content-type": "application/json" },
+				body: JSON.stringify({
+					id: id,
+				}),
+			})
+				.then((response) => {
+					console.log(response.status);
+					return response.json();
+				})
+				.then((data) => console.log(data));
+
+			router.refresh();
+			toast.success("Image deleted.", {
+				duration: 2500,
+			});
+		} catch (err) {
+			console.log(err);
+			toast.error("There was an error.");
+		}
 	};
 
 	useEffect(() => {
@@ -34,7 +89,7 @@ export default function PortfolioTable() {
 				setPortfolio(data);
 				setIsLoading(false);
 			});
-	}, []);
+	}, [portfolio]);
 
 	return (
 		<div className="overflow-x-auto">
@@ -56,6 +111,7 @@ export default function PortfolioTable() {
 								<div>
 									<div className="mask mask-circle w-12 h-12">
 										<Image
+											unoptimized
 											loading="lazy"
 											className="rounded-full"
 											width={96}
@@ -73,8 +129,20 @@ export default function PortfolioTable() {
 									</div>
 								</div>
 							</td>
-							<td className="overflow-ellipsis overflow-hidden whitespace-nowrap max-w-[12ch]">
-								{image.imageUrl}
+							<td className="flex items-center gap-2 space-x-3">
+								<button className="btn btn-sm btn-square btn-outline">
+									<Copy
+										height={20}
+										width={20}
+										onClick={() => {
+											navigator.clipboard.writeText(image.imageUrl);
+											toast.success("Copied URL to clipboard.");
+										}}
+									/>
+								</button>
+								<div className="overflow-ellipsis overflow-hidden whitespace-nowrap max-w-[12ch]">
+									{image.imageUrl}
+								</div>
 							</td>
 							<th>
 								{/* Open the modal using document.getElementById('ID').showModal() method */}
@@ -93,6 +161,7 @@ export default function PortfolioTable() {
 											<span className=" text-secondary/75 text-lg flex justify-between">
 												{image.name}
 												<Image
+													unoptimized
 													loading="lazy"
 													src={image.imageUrl}
 													height={48}
@@ -138,7 +207,6 @@ export default function PortfolioTable() {
 													<div
 														type={"button"}
 														className="btn btn-error text-secondary dark:text-primary"
-														// onClick={onDelete}
 														onClick={() =>
 															document.getElementById(image.id).showModal()
 														}
@@ -148,7 +216,9 @@ export default function PortfolioTable() {
 													<button
 														type="submit"
 														className="btn btn-secondary text-primary"
-														onClick={() => {}}
+														onClick={() => {
+															setIdToPatch(image.id);
+														}}
 													>
 														Save
 													</button>

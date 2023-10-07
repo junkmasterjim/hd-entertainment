@@ -14,7 +14,7 @@ export default function PortfolioCard() {
 		<div className="card overflow-x-hidden bg-secondary-focus text-primary shadow-xl md:py-2 md:px-16 mb-12">
 			<div className="card-body">
 				<div className="flex justify-between">
-					<h2 className=" card-title text-xl sm:text-2xl">Portfolio Content</h2>
+					<h2 className=" card-title text-xl sm:text-2xl">Portfolio Images</h2>
 					<div className="flex gap-8">
 						<AddContent />
 					</div>
