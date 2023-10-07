@@ -7,21 +7,21 @@ export default function LogoCloud() {
 				</h2>
 				<div className="mx-auto mt-10 grid max-w-lg grid-cols-3 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:gap-x-10 lg:mx-0 lg:max-w-none">
 					<img
-						className="max-h-24 w-full object-contain invert dark:filter-none"
+						className="max-h-24 w-full object-contain invert dark:filter-none pointer-events-none"
 						src="/808mafia.svg"
 						alt="808 Mafia"
 						width={158}
 						height={48}
 					/>
 					<img
-						className="max-h-32 w-full dark:invert object-contain "
+						className="max-h-32 w-full dark:invert object-contain pointer-events-none"
 						src="/nikelogo.svg"
 						alt="Nike"
 						width={158}
 						height={48}
 					/>
 					<img
-						className="max-h-12 w-full object-contain dark:invert"
+						className="max-h-12 w-full object-contain dark:invert pointer-events-none"
 						src="/YSL_Records.svg"
 						alt="YSL Records"
 						width={158}

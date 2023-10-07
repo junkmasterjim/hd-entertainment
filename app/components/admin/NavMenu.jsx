@@ -18,8 +18,8 @@ import { pageRoutes } from "@/pageRoutes";
 
 const navigation = [
 	{ name: "Home", route: "/admin", icon: Home },
-	// { name: "Users", route: "/admin/users", icon: Users2 },
-	// { name: "Portfolio", route: "/admin/portfolio", icon: ImageIcon },
+	{ name: "Users", route: "/admin/users", icon: Users2 },
+	{ name: "Portfolio", route: "/admin/portfolio", icon: ImageIcon },
 	// { name: "Products", route: "/admin/products", icon: Boxes },
 	// { name: "Services", route: "/admin/services", icon: HelpingHand },
 	{ name: "Log Out", route: "/api/auth/signout", icon: LogOut },
