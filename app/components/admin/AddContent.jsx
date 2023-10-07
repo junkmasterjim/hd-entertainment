@@ -1,4 +1,48 @@
-export default function PortfolioModal() {
+"use client";
+
+import { toast, Toaster } from "react-hot-toast";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+export default function AddContent() {
+	const [nameInput, setNameInput] = useState();
+	const [urlInput, setUrlInput] = useState();
+
+	const router = useRouter();
+
+	const handleNameChange = (e) => {
+		setNameInput(e.target.value);
+	};
+	const handleUrlChange = (e) => {
+		setUrlInput(e.target.value);
+	};
+
+	const onSubmit = async (e) => {
+		e.preventDefault();
+
+		try {
+			await fetch("/api/portfolio", {
+				method: "POST",
+				headers: { "Content-type": "application/json" },
+				body: JSON.stringify({
+					name: nameInput,
+					imageUrl: urlInput,
+				}),
+			})
+				.then((response) => {
+					console.log(response.status);
+					return response.json();
+				})
+				.then((data) => console.log(data));
+
+			router.refresh();
+			toast.success("Content created.", { duration: 2500 });
+		} catch (err) {
+			console.log(err);
+			toast.error("There was an error.");
+		}
+	};
+
 	return (
 		<div className="flex justify-between py-8">
 			<span></span>
@@ -18,7 +62,7 @@ export default function PortfolioModal() {
 						<div className="divider before:bg-secondary/50 after:bg-secondary/50 m-0"></div>
 					</h3>
 					<div className="">
-						<form onSubmit={""} className="form-control gap-4">
+						<form onSubmit={onSubmit} className="form-control gap-4">
 							<label
 								htmlFor="nameInput"
 								className="label font-bold text-secondary/75"
@@ -27,9 +71,9 @@ export default function PortfolioModal() {
 							</label>
 							<input
 								required
-								onChange={""}
+								onChange={handleNameChange}
 								id="nameInput"
-								value={""}
+								value={nameInput}
 								type="text"
 								minLength={1}
 								className="input text-secondary placeholder:text-secondary/75 bg-primary-focus/50"
@@ -43,8 +87,8 @@ export default function PortfolioModal() {
 							</label>
 							<input
 								required
-								value={""}
-								onChange={""}
+								value={urlInput}
+								onChange={handleUrlChange}
 								id="imageUrlInput"
 								type={"url"}
 								className="input text-secondary placeholder:text-secondary/75 bg-primary-focus/50"
@@ -63,6 +107,7 @@ export default function PortfolioModal() {
 					<button></button>
 				</form>
 			</dialog>
+			<Toaster position={"top-center"} reverseOrder={false} />
 		</div>
 	);
 }

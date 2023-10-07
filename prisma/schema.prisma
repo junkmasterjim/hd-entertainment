@@ -20,5 +20,5 @@ model User {
 model PortfolioImage {
   id        Int      @id @default(autoincrement())
   name      String   
-  imageUrl  String   @unique
+  imageUrl  String   @db.LongText
 }

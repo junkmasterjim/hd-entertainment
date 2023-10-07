@@ -1,7 +1,7 @@
 "use client";
 
 import Loading from "@/app/admin/loading";
-import PortfolioModal from "@/app/components/admin/PortfolioModal";
+import AddContent from "@/app/components/admin/AddContent";
 
 import { toast, Toaster } from "react-hot-toast";
 import { MoreHorizontal } from "lucide-react";
@@ -16,7 +16,7 @@ export default function PortfolioCard() {
 				<div className="flex justify-between">
 					<h2 className=" card-title text-xl sm:text-2xl">Portfolio Content</h2>
 					<div className="flex gap-8">
-						<PortfolioModal />
+						<AddContent />
 					</div>
 				</div>
 				<div className="divider mb-0" />
