@@ -37,7 +37,8 @@ export default function HeroTiles() {
 								{/* Grid Left */}
 								<div className="ml-auto w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -49,7 +50,8 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -66,7 +68,8 @@ export default function HeroTiles() {
 
 								<div className="mr-auto w-52 flex-none sm:space-y-8 space-y-4 sm:mr-0 sm:pt-52 lg:pt-36">
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -78,7 +81,8 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -90,7 +94,8 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											width={208}
 											height={208}
 											src="https://www.dropbox.com/scl/fi/1wzfa6ye3eh389asonx3h/MM-2.jpg?rlkey=56qfp93j51rjbb5o1eruofogl&dl=1"
@@ -105,7 +110,8 @@ export default function HeroTiles() {
 
 								<div className="w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:pt-0">
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -117,7 +123,8 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -129,7 +136,8 @@ export default function HeroTiles() {
 										<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 									</div>
 									<div className="relative">
-										<img
+										<Image
+											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
