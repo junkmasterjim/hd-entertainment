@@ -100,25 +100,32 @@ export default function PortfolioTable() {
 						<th></th>
 						<th>Name</th>
 						<th>Image URL</th>
+						<th>Type</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					{/* row 1 */}
 					{portfolio?.map((image) => (
-						<tr key={image.id}>
+						<tr key={image.id} className="hover">
 							<td>
 								<div>
 									<div className="mask mask-circle w-12 h-12">
-										<Image
-											unoptimized
-											loading="lazy"
-											className="rounded-full"
-											width={96}
-											height={96}
-											src={image.imageUrl}
-											alt={image.name}
-										/>
+										{!image.isVideo ? (
+											<Image
+												unoptimized
+												loading="lazy"
+												className="rounded-full"
+												width={96}
+												height={96}
+												src={image.imageUrl}
+												alt={image.name}
+											/>
+										) : (
+											<video className="rounded-full h-12 w-12">
+												<source src={image.imageUrl} type="video/mp4" />
+											</video>
+										)}
 									</div>
 								</div>
 							</td>
@@ -144,6 +151,7 @@ export default function PortfolioTable() {
 									{image.imageUrl}
 								</div>
 							</td>
+							<td>{!image.isVideo ? "Image" : "Video"}</td>
 							<th>
 								{/* Open the modal using document.getElementById('ID').showModal() method */}
 								<button

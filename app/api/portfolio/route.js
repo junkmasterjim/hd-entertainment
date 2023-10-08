@@ -17,7 +17,7 @@ export async function POST(req) {
 		try {
 			const body = await req.json();
 
-			const { name, imageUrl } = body;
+			const { name, imageUrl, isVideo } = body;
 
 			if (!name) {
 				return NextResponse.json({
@@ -34,13 +34,24 @@ export async function POST(req) {
 				});
 			}
 
-			const newImg = await prismadb.portfolioImage.create({
-				data: {
-					name: `${body.name}`,
-					imageUrl: `${body.imageUrl}`,
-				},
-			});
-			return NextResponse.json(newImg);
+			if (body.isVideo == true) {
+				const newImg = await prismadb.portfolioImage.create({
+					data: {
+						name: `${body.name}`,
+						imageUrl: `${body.imageUrl}`,
+						isVideo: true,
+					},
+				});
+				return NextResponse.json(newImg);
+			} else {
+				const newImg = await prismadb.portfolioImage.create({
+					data: {
+						name: `${body.name}`,
+						imageUrl: `${body.imageUrl}`,
+					},
+				});
+				return NextResponse.json(newImg);
+			}
 		} catch (err) {
 			return NextResponse.json({
 				message: "500: Internal Server Error",

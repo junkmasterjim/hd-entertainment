@@ -5,8 +5,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function AddContent() {
-	const [nameInput, setNameInput] = useState();
-	const [urlInput, setUrlInput] = useState();
+	const [nameInput, setNameInput] = useState("");
+	const [urlInput, setUrlInput] = useState("");
+	const [isVideoInput, setIsVideoInput] = useState(false);
+
+	const toggleIsVideoInput = () => {
+		setIsVideoInput(!isVideoInput);
+	};
 
 	const router = useRouter();
 
@@ -15,6 +20,9 @@ export default function AddContent() {
 	};
 	const handleUrlChange = (e) => {
 		setUrlInput(e.target.value);
+	};
+	const handleIsVideoInputChange = () => {
+		setIsVideoInput(!isVideoInput);
 	};
 
 	const onSubmit = async (e) => {
@@ -26,6 +34,7 @@ export default function AddContent() {
 				headers: { "Content-type": "application/json" },
 				body: JSON.stringify({
 					name: nameInput,
+					isVideo: isVideoInput,
 					imageUrl: urlInput,
 				}),
 			})
@@ -94,6 +103,21 @@ export default function AddContent() {
 								className="input text-secondary placeholder:text-secondary/75 bg-primary-focus/50"
 								placeholder="Enter the Image URL."
 							/>
+							<div className="flex items-center gap-4">
+								<label
+									htmlFor="toggle"
+									className="label font-bold text-secondary/75"
+								>
+									Video? :
+								</label>
+								<input
+									type="checkbox"
+									id="toggle"
+									value={isVideoInput}
+									onChange={handleIsVideoInputChange}
+									className="checkbox checkbox-secondary"
+								/>
+							</div>
 							<button
 								type="submit"
 								className="btn my-2 btn-secondary text-primary"
