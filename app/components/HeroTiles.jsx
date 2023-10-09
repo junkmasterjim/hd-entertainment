@@ -43,7 +43,7 @@ export default function HeroTiles() {
 											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/1omsrj8w79fmpsc2ghinp/testing-loop-kit.jpg?rlkey=2gxzks2y6pq7axpefh3d2kmon&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/a43w6m1yyuik4av1dgg2m/testing-loop-kit.svg?rlkey=pb3x71g9lsk1yu4t53ygldgyk&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -56,7 +56,7 @@ export default function HeroTiles() {
 											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/sv9xg96pyx25kxoslq81b/tre-shit.jpg?rlkey=y0n9o8u8sxm0osbufejvkwazq&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/dl3yppl38yvvcjq0fq92a/tre-shit.svg?rlkey=5bybetn1fuv35e8dq1wi1g673&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -74,7 +74,7 @@ export default function HeroTiles() {
 											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/s/snv89a9yzd8qldx/tmag%20shit.jpg?dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/96x44lj80dwcea9xveb4o/tmag-shit.svg?rlkey=z7qzfhhy40idqbbc8qivt4u4p&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -87,7 +87,7 @@ export default function HeroTiles() {
 											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/ezbxhb5dcsqbbho2be2wb/astronaut.jpg?rlkey=feanh8hjxfafgi02fqbs57njl&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/su0kun9wkbqbpysfb82hn/astronaut.svg?rlkey=y47sjvh5hzciepwdey35ivf0h&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -98,7 +98,7 @@ export default function HeroTiles() {
 											unoptimized
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/1wzfa6ye3eh389asonx3h/MM-2.jpg?rlkey=56qfp93j51rjbb5o1eruofogl&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/mdqzja143o7i20xm3x85i/MM-2.svg?rlkey=1vgdx3s89dy64jmstd0bdr79g&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -116,7 +116,7 @@ export default function HeroTiles() {
 											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/lus812ygdap6eqrtk4qun/fendii-art.jpg?rlkey=fkrqjqagaa7qo2yimb84jxv1t&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/8kux7lqosnrpx7awmh4m2/BRANDOsvg.svg?rlkey=eavvngqnxj8nhmdcolovn8x8r&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -129,7 +129,7 @@ export default function HeroTiles() {
 											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/9wivg9jjufwdv5xik6qef/DEMONS-COVER-ART-yfk.hd.jpg?rlkey=q9x1pgsnopupchfv6i00hnkxm&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/eztk9ocy1v8suysj404tp/DEMONS-COVER-ART-yfk.hd.svg?rlkey=8ya6w01vaxrqzdb1pxxnil7ht&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -142,7 +142,7 @@ export default function HeroTiles() {
 											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/38f6zdj5hv8if3ghytaxi/suto-shit-1.jpg?rlkey=h5t8sgzck5pr6bnpodzr2zl8e&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/zpzyahnopprryigd77z56/suto-shit-1.svg?rlkey=9wwtebeookg4wh8i92o2difai&dl=0"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
