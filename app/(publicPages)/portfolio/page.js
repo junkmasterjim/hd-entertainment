@@ -1,3 +1,9 @@
+import PortfolioGallery from "@/app/components/PortfolioGallery";
+
 export default function Page() {
-	return <div>portfolio</div>;
+	return (
+		<div>
+			<PortfolioGallery />
+		</div>
+	);
 }

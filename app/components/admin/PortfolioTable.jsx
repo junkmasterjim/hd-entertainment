@@ -122,7 +122,7 @@ export default function PortfolioTable() {
 												alt={image.name}
 											/>
 										) : (
-											<video className="rounded-full h-12 w-12">
+											<video autoPlay muted className="rounded-full h-12 w-12">
 												<source src={image.imageUrl} type="video/mp4" />
 											</video>
 										)}
