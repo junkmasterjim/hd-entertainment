@@ -22,7 +22,7 @@ export default function PortfolioGallery() {
 			className="portfolioGrid -ml-8 flex w-auto"
 			columnClassName="pl-8 bg-clip-padding"
 		>
-			{gallery.map((content) =>
+			{gallery?.map((content) =>
 				content.isVideo ? (
 					<div key={content.name}>
 						<video muted autoPlay loop src={content.imageUrl}></video>
