@@ -24,11 +24,11 @@ export default function PortfolioGallery() {
 		>
 			{gallery.map((content) =>
 				content.isVideo ? (
-					<div>
+					<div key={content.name}>
 						<video muted autoPlay loop src={content.imageUrl}></video>
 					</div>
 				) : (
-					<div className="relative h-96 bg-gray-500 my-8">
+					<div className="relative h-96 bg-gray-500 my-8" key={content.name}>
 						<Image
 							priority
 							src={content.imageUrl}
