@@ -5,7 +5,12 @@ import prismadb from "@/lib/prismadb";
 
 export async function GET(req) {
 	const session = await getServerSession(req);
+	console.log(req.headers.get("isFromSite"));
+
 	if (session) {
+		const portfolio = await prismadb.portfolioImage.findMany();
+		return NextResponse.json(portfolio);
+	} else if (req.headers.get("isFromSite") == "true") {
 		const portfolio = await prismadb.portfolioImage.findMany();
 		return NextResponse.json(portfolio);
 	} else return NextResponse.json("401: Unauthenticated");

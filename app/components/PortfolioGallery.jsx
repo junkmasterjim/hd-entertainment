@@ -9,12 +9,12 @@ export default function PortfolioGallery() {
 	const [gallery, setGallery] = useState([]);
 
 	useEffect(() => {
-		fetch("/api/portfolio")
+		fetch("/api/portfolio", {
+			headers: { "Content-type": "application/json", isFromSite: "true" },
+		})
 			.then((res) => res.json())
 			.then((data) => setGallery(data));
 	}, []);
-
-	console.log(gallery);
 
 	return (
 		<Masonry
@@ -22,23 +22,30 @@ export default function PortfolioGallery() {
 			className="portfolioGrid -ml-8 flex w-auto"
 			columnClassName="pl-8 bg-clip-padding"
 		>
-			{gallery?.map((content) =>
-				content.isVideo ? (
-					<div key={content.name}>
-						<video muted loop controls src={content.imageUrl}></video>
-					</div>
-				) : (
-					<div className="relative h-96 bg-gray-500 my-8" key={content.name}>
-						<Image
-							priority
-							src={content.imageUrl}
-							alt={content.name}
-							fill
-							className="object-cover "
-						/>
-					</div>
-				)
-			)}
+			{typeof gallery == "object" &&
+				gallery.map((content) =>
+					content.isVideo ? (
+						<div key={content.name}>
+							<video
+								muted
+								loop
+								autoPlay
+								controls
+								src={content.imageUrl}
+							></video>
+						</div>
+					) : (
+						<div className="relative h-96 bg-gray-500 my-8" key={content.name}>
+							<Image
+								priority
+								src={content.imageUrl}
+								alt={content.name}
+								fill
+								className="object-cover "
+							/>
+						</div>
+					)
+				)}
 		</Masonry>
 	);
 }
