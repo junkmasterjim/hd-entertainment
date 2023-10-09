@@ -34,7 +34,7 @@ export default function PortfolioGallery() {
 							src={content.imageUrl}
 							alt={content.name}
 							fill
-							className="object-cover"
+							className="object-cover "
 						/>
 					</div>
 				)
