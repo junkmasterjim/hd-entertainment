@@ -38,7 +38,6 @@ export default function HeroTiles() {
 								<div className="ml-auto w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
 									<div className="relative">
 										<Image
-											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -51,7 +50,6 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
-											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -69,7 +67,6 @@ export default function HeroTiles() {
 								<div className="mr-auto w-52 flex-none sm:space-y-8 space-y-4 sm:mr-0 sm:pt-52 lg:pt-36">
 									<div className="relative">
 										<Image
-											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -82,7 +79,6 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
-											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -95,7 +91,6 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
-											unoptimized
 											width={208}
 											height={208}
 											src="https://dl.dropboxusercontent.com/scl/fi/mdqzja143o7i20xm3x85i/MM-2.svg?rlkey=1vgdx3s89dy64jmstd0bdr79g&dl=0"
@@ -111,7 +106,6 @@ export default function HeroTiles() {
 								<div className="w-52 flex-none sm:space-y-8 space-y-4 pt-32 sm:pt-0">
 									<div className="relative">
 										<Image
-											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -124,7 +118,6 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
-											unoptimized
 											priority
 											placeholder="empty"
 											width={208}
@@ -137,7 +130,6 @@ export default function HeroTiles() {
 									</div>
 									<div className="relative">
 										<Image
-											unoptimized
 											priority
 											placeholder="empty"
 											width={208}

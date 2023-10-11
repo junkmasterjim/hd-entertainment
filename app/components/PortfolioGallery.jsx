@@ -44,7 +44,16 @@ export default function PortfolioGallery() {
 							</div>
 						) : (
 							<div className="my-8" key={content.name}>
-								<img src={content.imageUrl} alt={content.name} loading="lazy" />
+								<div className="relative">
+									<Image
+										src={content.imageUrl}
+										alt={content.name}
+										loading="lazy"
+										height={512}
+										width={512}
+									/>
+								</div>
+								{/* <img src={content.imageUrl} alt={content.name} loading="lazy" /> */}
 							</div>
 						)
 					)}
