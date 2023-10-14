@@ -48,6 +48,7 @@ export default function PageHeader() {
 							key={route.name}
 							href={route.route}
 							className="btn btn-md border-none bg-transparent text-primary tracking-wide hover:bg-neutral hover:text-secondary dark:hover:text-primary"
+							scroll
 						>
 							{route.name}
 						</Link>
