@@ -113,11 +113,12 @@ export default function PortfolioTable() {
 									<div className="mask mask-circle w-12 h-12">
 										{!image.isVideo ? (
 											<Image
-												unoptimized
 												loading="lazy"
 												className="rounded-full"
 												width={96}
 												height={96}
+												placeholder="blur"
+												blurDataURL={image?.base64}
 												src={image.imageUrl}
 												alt={image.name}
 											/>

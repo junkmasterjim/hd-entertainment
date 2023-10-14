@@ -1,11 +1,27 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
 
+import { getPlaiceholder } from "plaiceholder";
+
 import prismadb from "@/lib/prismadb";
+
+const generateBase64 = async (imageUrl) => {
+	try {
+		const src = imageUrl;
+
+		const buffer = await fetch(src).then(async (res) =>
+			Buffer.from(await res.arrayBuffer())
+		);
+
+		const { base64 } = await getPlaiceholder(buffer);
+		return base64;
+	} catch (err) {
+		console.log(err);
+	}
+};
 
 export async function GET(req) {
 	const session = await getServerSession(req);
-	console.log(req.headers.get("isFromSite"));
 
 	if (session) {
 		const portfolio = await prismadb.portfolioImage.findMany();
@@ -39,7 +55,7 @@ export async function POST(req) {
 				});
 			}
 
-			if (body.isVideo == true) {
+			if (isVideo == true) {
 				const newImg = await prismadb.portfolioImage.create({
 					data: {
 						name: `${body.name}`,
@@ -49,10 +65,13 @@ export async function POST(req) {
 				});
 				return NextResponse.json(newImg);
 			} else {
+				const base64 = await generateBase64(imageUrl);
+
 				const newImg = await prismadb.portfolioImage.create({
 					data: {
 						name: `${body.name}`,
 						imageUrl: `${body.imageUrl}`,
+						base64: base64,
 					},
 				});
 				return NextResponse.json(newImg);
@@ -73,8 +92,6 @@ export async function PATCH(req) {
 			const body = await req.json();
 			const { name, imageUrl, id } = body;
 
-			// console.log(name, email, id);
-
 			if (!name) {
 				return NextResponse.json({
 					route: "[PORTFOLIO_PATCH]",
@@ -90,6 +107,8 @@ export async function PATCH(req) {
 				});
 			}
 
+			const base64 = await generateBase64(imageUrl);
+
 			const updateImage = await prismadb.portfolioImage.update({
 				where: {
 					id: id,
@@ -97,12 +116,14 @@ export async function PATCH(req) {
 				data: {
 					name: name,
 					imageUrl: imageUrl,
+					base64: base64,
 				},
 			});
 			return NextResponse.json(updateImage);
 		} catch (err) {
 			return NextResponse.json({
 				message: "500: Internal Server Error",
+				error: err,
 			});
 		}
 	} else return NextResponse.json("401: Unauthenticated");

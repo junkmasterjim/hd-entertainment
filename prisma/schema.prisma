@@ -22,4 +22,5 @@ model PortfolioImage {
   name      String   
   imageUrl  String   @db.LongText
   isVideo   Boolean  @default(false)
+  base64    String   @db.LongText
 }

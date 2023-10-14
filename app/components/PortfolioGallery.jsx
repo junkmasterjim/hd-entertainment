@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import Masonry from "react-masonry-css";
+import Loading from "../(publicPages)/loading";
 
 export default function PortfolioGallery() {
 	const [gallery, setGallery] = useState([]);
@@ -22,7 +23,9 @@ export default function PortfolioGallery() {
 			.then((data) => setGallery(data));
 	}, []);
 
-	return (
+	return gallery.length === 0 ? (
+		<Loading />
+	) : (
 		<div className="flex w-full justify-center p-4 py-36">
 			<Masonry
 				breakpointCols={breakpoints}
@@ -37,23 +40,23 @@ export default function PortfolioGallery() {
 									muted
 									loop
 									autoPlay
+									className="rounded-sm max-h-[512px]"
 									controls
 									src={content.imageUrl}
-									// className="object-cover"
 								></video>
 							</div>
 						) : (
 							<div className="my-8" key={content.name}>
-								<div className="relative">
-									<Image
-										src={content.imageUrl}
-										alt={content.name}
-										loading="lazy"
-										height={512}
-										width={512}
-									/>
-								</div>
-								{/* <img src={content.imageUrl} alt={content.name} loading="lazy" /> */}
+								<Image
+									src={content.imageUrl}
+									alt={content.name}
+									loading="lazy"
+									height={512}
+									width={512}
+									className="rounded-sm"
+									placeholder="blur"
+									blurDataURL={content.base64}
+								/>
 							</div>
 						)
 					)}

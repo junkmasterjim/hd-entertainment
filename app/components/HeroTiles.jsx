@@ -39,10 +39,10 @@ export default function HeroTiles() {
 									<div className="relative">
 										<Image
 											priority
-											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/a43w6m1yyuik4av1dgg2m/testing-loop-kit.svg?rlkey=pb3x71g9lsk1yu4t53ygldgyk&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/s8hmm4hz2yb1rd1bcb4jo/testing-loop-kit.jpg?rlkey=cq7jg5i4qa8c8itgpdjsem636&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAP0lEQVR4nAE0AMv/APPz8vr5+vr5+efn5wCxrqw6NixKSD6sq6kAsa+tDAYABAQAurq5AOTk5NXV1NLS0f7+/lDRH8sigNObAAAAAElFTkSuQmCC"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -51,10 +51,10 @@ export default function HeroTiles() {
 									<div className="relative">
 										<Image
 											priority
-											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/dl3yppl38yvvcjq0fq92a/tre-shit.svg?rlkey=5bybetn1fuv35e8dq1wi1g673&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/n4ufn2i3fbdskfaaaeacg/tre-shit.jpg?rlkey=vesezquf8mreuam5u3us8pwd1&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/AIZQeL2GnOrCyrOfswBHOksQDAeGc3aWkJoAnpOz/+/////V6ezLAAYAJSUZMxMHHQ0IH6RUFxKw0WCKAAAAAElFTkSuQmCC"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -68,10 +68,10 @@ export default function HeroTiles() {
 									<div className="relative">
 										<Image
 											priority
-											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/96x44lj80dwcea9xveb4o/tmag-shit.svg?rlkey=z7qzfhhy40idqbbc8qivt4u4p&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/xg96p7dgdm4k8ja2egtpq/tmag-shit.jpg?rlkey=q9lxp1rksbxeheb2mix67fylr&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/ABgZG8q5voV4fgABAQAmJSf25+x9cnUCBAUAYFVX/vz/p6apX1RRAKSam5uPj7yqp1BERA6TFiu6hazaAAAAAElFTkSuQmCC"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -80,10 +80,10 @@ export default function HeroTiles() {
 									<div className="relative">
 										<Image
 											priority
-											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/su0kun9wkbqbpysfb82hn/astronaut.svg?rlkey=y47sjvh5hzciepwdey35ivf0h&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/7lor60rszr8lzww3ubf3s/astronaut.jpg?rlkey=v0wcbihh9qenkzc28403uro63&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAPElEQVR4nGNQkpdRUVTg5+GUkhBhMDbQ72iu7+1o5uPhYOBgZnj14Maf3595OFkYZCRFo0MDkxKiZCTFADT+DWU9HXcjAAAAAElFTkSuQmCC"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -93,7 +93,8 @@ export default function HeroTiles() {
 										<Image
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/mdqzja143o7i20xm3x85i/MM-2.svg?rlkey=1vgdx3s89dy64jmstd0bdr79g&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/tuenn948nefpjusz5fusp/MM-2.jpg?rlkey=2petxgf33340k0azwnemiymjc&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/ANCkr6h/gbuRib2MnQB8VVQcAAA3KiE2IiIA/8PI36e3VjhA/8fXAOexvf/n9nlXX/rF2IHtGu1X0zNiAAAAAElFTkSuQmCC"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -107,10 +108,10 @@ export default function HeroTiles() {
 									<div className="relative">
 										<Image
 											priority
-											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/8kux7lqosnrpx7awmh4m2/BRANDOsvg.svg?rlkey=eavvngqnxj8nhmdcolovn8x8r&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/qfhr9fz8a2h4w5s57plui/BRANDO.jpg?rlkey=7k4l770814rcpmhj1bbd4h9l0&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/AA4ODvHw8NDMzNrY2gAFBQX/9/epoKDX09MAERQUmoKCXENI5eXjACkuLm1HSy0AAMfLy7k9GMt9Fjo9AAAAAElFTkSuQmCC"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -119,10 +120,10 @@ export default function HeroTiles() {
 									<div className="relative">
 										<Image
 											priority
-											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/eztk9ocy1v8suysj404tp/DEMONS-COVER-ART-yfk.hd.svg?rlkey=8ya6w01vaxrqzdb1pxxnil7ht&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/x9ydxxhjj0fywuh86ic7b/DEMONS-COVER-ART-yfk.hd.jpg?rlkey=6poo350qcvo5juzl32bi3a0a7&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/AOTj6szK0dzb4vDw9gD09P1lXmRCPED//v8AysjQMSktEAAEiYSJAGplaBwUFzkxNU5JSk0qGd87DByNAAAAAElFTkSuQmCC"
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
@@ -131,10 +132,10 @@ export default function HeroTiles() {
 									<div className="relative">
 										<Image
 											priority
-											placeholder="empty"
 											width={208}
 											height={208}
-											src="https://dl.dropboxusercontent.com/scl/fi/zpzyahnopprryigd77z56/suto-shit-1.svg?rlkey=9wwtebeookg4wh8i92o2difai&dl=0"
+											src="https://dl.dropboxusercontent.com/scl/fi/t2yrfmxe9mkw9f27zckra/suto-shit-1.jpg?rlkey=96whz4u8d4v4iu323dis6fbzw&dl=0"
+											placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAPUlEQVR4nGMQ4WCQkZISFxPi4GBg8HI1DvD39fLySE7wZwhwNDu6bcH5XcvtbKwZymJT/1/f9//tEW0RWQA4LxD3ynoVCAAAAABJRU5ErkJggg=="
 											alt=""
 											className="aspect-[1/1] pointer-events-none w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										/>
