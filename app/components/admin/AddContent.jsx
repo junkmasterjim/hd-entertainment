@@ -9,10 +9,6 @@ export default function AddContent() {
 	const [urlInput, setUrlInput] = useState("");
 	const [isVideoInput, setIsVideoInput] = useState(false);
 
-	const toggleIsVideoInput = () => {
-		setIsVideoInput(!isVideoInput);
-	};
-
 	const router = useRouter();
 
 	const handleNameChange = (e) => {

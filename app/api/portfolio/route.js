@@ -37,7 +37,7 @@ export async function POST(req) {
 	if (session) {
 		try {
 			const body = await req.json();
-
+			console.log(body);
 			const { name, imageUrl, isVideo } = body;
 
 			if (!name) {
@@ -61,6 +61,7 @@ export async function POST(req) {
 						name: `${body.name}`,
 						imageUrl: `${body.imageUrl}`,
 						isVideo: true,
+						base64: "",
 					},
 				});
 				return NextResponse.json(newImg);
