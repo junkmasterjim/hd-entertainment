@@ -129,7 +129,7 @@ const Users = () => {
 								email
 							</code>{" "}
 							{
-								": A string representing the user's email address. A user cannot be generated without at least providing an email."
+								": A string representing the user's email address. Must be unique. A user cannot be generated without at least providing an email."
 							}
 						</li>
 					</ul>
