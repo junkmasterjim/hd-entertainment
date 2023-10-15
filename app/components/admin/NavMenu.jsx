@@ -9,6 +9,7 @@ import {
 	ImageIcon,
 	Boxes,
 	HelpingHand,
+	FileText,
 } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
@@ -46,6 +47,17 @@ export default function NavMenu() {
 					</div>
 					<nav className="flex flex-1 flex-col">
 						<ul role="list" className="flex flex-1 flex-col gap-y-8">
+							<li>
+								<ul role="list" className="-mx-2 pb-4 space-y-1 menu">
+									<p className="menu-title">Readme</p>
+									<li className="text-lg">
+										<Link href="/admin/docs">
+											<FileText className="h-4 w-4 mr-2" />
+											Docs
+										</Link>
+									</li>
+								</ul>
+							</li>
 							<li>
 								<ul role="list" className="-mx-2 pb-4 space-y-1 menu">
 									<p className="menu-title">Navigation</p>
