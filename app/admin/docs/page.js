@@ -11,7 +11,7 @@ export default function Page() {
 	);
 }
 
-export const Intro = () => {
+const Intro = () => {
 	const navigation = [
 		{ route: "/admin/docs#users", name: "Users" },
 		{ route: "/admin/docs#portfolio", name: "Portfolio" },
@@ -62,7 +62,7 @@ export const Intro = () => {
 	);
 };
 
-export const DocsHeading = ({ title }) => {
+const DocsHeading = ({ title }) => {
 	return (
 		<h2 className="font-semibold text-4xl max-w-xl">
 			<div className="flex justify-between">
@@ -78,7 +78,7 @@ export const DocsHeading = ({ title }) => {
 	);
 };
 
-export const Users = () => {
+const Users = () => {
 	return (
 		<div id="users" className="sm:pt-0 pt-16 ">
 			<DocsHeading title={"users"} />
@@ -99,7 +99,7 @@ export const Users = () => {
 					</code>{" "}
 					fields.{" "}
 					<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
-						(e.g: "im.yfk.hd@gmail.com, noahpittman00@gmail.com")
+						(e.g: {"im.yfk.hd@gmail.com, noahpittman00@gmail.com"})
 					</code>
 				</p>
 				<div className="leading-8">
@@ -118,7 +118,7 @@ export const Users = () => {
 							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
 								name
 							</code>{" "}
-							: A string representing the user's name. This defaults to{" "}
+							{": A string representing the user's name. This defaults to"}{" "}
 							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
 								undefined
 							</code>{" "}
@@ -128,8 +128,9 @@ export const Users = () => {
 							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
 								email
 							</code>{" "}
-							: A string representing the user's email address. A user cannot be
-							generated without at least providing an email.
+							{
+								": A string representing the user's email address. A user cannot be generated without at least providing an email."
+							}
 						</li>
 					</ul>
 				</div>
@@ -162,6 +163,7 @@ export const Users = () => {
 					</div>
 					<div className="pl-4 mt-8 sm:mt-0">
 						<Image
+							alt=""
 							className="w-full rounded-xl"
 							src={"/createUser.png"}
 							placeholder="blur"
@@ -181,7 +183,7 @@ export const Users = () => {
 						<div className="divider mt-0" />
 						<div className="flex flex-col gap-12">
 							<div className="alert bg-primary text-secondary">
-								Edit a user's information from the actions menu.
+								{"Edit a user's information from the actions menu."}
 							</div>
 							<div className="alert bg-primary text-secondary">
 								<p>
@@ -198,6 +200,7 @@ export const Users = () => {
 					</div>
 					<div className="pl-4 mt-8 sm:mt-0">
 						<Image
+							alt=""
 							className="w-full rounded-xl"
 							src={"/userActions.png"}
 							placeholder="blur"
@@ -213,7 +216,7 @@ export const Users = () => {
 	);
 };
 
-export const Portfolio = () => {
+const Portfolio = () => {
 	return (
 		<div id="portfolio" className="sm:pt-0 pt-16">
 			<DocsHeading title={"portfolio"} />
@@ -241,8 +244,9 @@ export const Portfolio = () => {
 							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
 								name
 							</code>{" "}
-							: A string representing content's name. Content cannot be added
-							without providing a name.
+							{
+								": A string representing content's name. Content cannot be added without providing a name."
+							}
 						</li>
 						<li>
 							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
@@ -310,6 +314,7 @@ export const Portfolio = () => {
 								<div>
 									<div>
 										<Image
+											alt=""
 											className="w-full rounded-xl"
 											src={"/copyLinkFromDropbox.png"}
 											placeholder="blur"
@@ -346,6 +351,7 @@ export const Portfolio = () => {
 					</div>
 					<div className="pl-4 mt-8 sm:mt-0">
 						<Image
+							alt=""
 							className="w-full rounded-xl sm:mt-4"
 							src={"/createContent.png"}
 							placeholder="blur"
@@ -380,6 +386,7 @@ export const Portfolio = () => {
 					</div>
 					<div className="pl-4 mt-8 sm:mt-0">
 						<Image
+							alt=""
 							className="w-full rounded-xl"
 							src={"/contentActions.png"}
 							placeholder="blur"
