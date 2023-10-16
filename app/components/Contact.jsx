@@ -1,10 +1,23 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
+	const [nameInput, setNameInput] = useState("");
+	const handleName = (e) => {
+		setNameInput(e.target.value);
+	};
+	const [emailInput, setEmailInput] = useState("");
+	const handleEmail = (e) => {
+		setEmailInput(e.target.value);
+	};
+	const [messageInput, setMessageInput] = useState("");
+	const handleMessage = (e) => {
+		setMessageInput(e.target.value);
+	};
+
 	const form = useRef();
 
 	const sendEmail = (e) => {
@@ -16,6 +29,9 @@ export default function Contact() {
 				(result) => {
 					// console.log(result.text);
 					toast.success("Email sent!");
+					setNameInput("");
+					setEmailInput("");
+					setMessageInput("");
 				},
 				(error) => {
 					// console.log(error.text);
@@ -50,6 +66,8 @@ export default function Contact() {
 										placeholder="Enter your name"
 										type="text"
 										name="user_name"
+										value={nameInput}
+										onChange={handleName}
 										required
 										id="name"
 										autoComplete="given-name"
@@ -69,6 +87,8 @@ export default function Contact() {
 										placeholder="Enter your email"
 										type="text"
 										name="user_email"
+										value={emailInput}
+										onChange={handleEmail}
 										required
 										id="name"
 										autoComplete="email"
@@ -89,6 +109,8 @@ export default function Contact() {
 										placeholder="Enter your message"
 										id="message"
 										name="message"
+										value={messageInput}
+										onChange={handleMessage}
 										required
 										rows={4}
 										className="textarea block w-full rounded-md border-0 px-3.5 py-2 text-primary bg-secondary/50 shadow-sm placeholder:text-primary/60 focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6"

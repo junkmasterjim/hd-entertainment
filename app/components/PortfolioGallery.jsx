@@ -40,7 +40,7 @@ export default function PortfolioGallery() {
 									muted
 									loop
 									autoPlay
-									className="rounded-xl max-h-[512px]"
+									className="rounded-xl my-8 max-h-[512px]"
 									controls
 									src={content.imageUrl}
 								></video>
