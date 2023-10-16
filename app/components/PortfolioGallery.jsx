@@ -20,7 +20,7 @@ export default function PortfolioGallery() {
 			headers: { "Content-type": "application/json", isFromSite: "true" },
 		})
 			.then((res) => res.json())
-			.then((data) => setGallery(data));
+			.then((data) => setGallery(data.reverse()));
 	}, []);
 
 	return gallery.length === 0 ? (
@@ -40,7 +40,7 @@ export default function PortfolioGallery() {
 									muted
 									loop
 									autoPlay
-									className="rounded-sm max-h-[512px]"
+									className="rounded-xl max-h-[512px]"
 									controls
 									src={content.imageUrl}
 								></video>
@@ -53,7 +53,7 @@ export default function PortfolioGallery() {
 									loading="lazy"
 									height={512}
 									width={512}
-									className="rounded-sm"
+									className="rounded-xl"
 									placeholder="blur"
 									blurDataURL={content.base64}
 								/>
