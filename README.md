@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<br />
+<div align="center">
 
-## Getting Started
+  <h3 align="center">donebyHD Entertainment</h3>
 
-First, run the development server:
+  <p align="center">
+    <a target="_blank" href="https://hd-next13.vercel.app/">View Demo</a>
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project is a fully responsive, full stack portfolio website built for a client featuring a custom made CMS dashboard complete with Google authentication and a fully authenticated API to manage content stored in a MySQL database.
 
-## Learn More
+Features lazy loaded images with placeholders, contact form with email functionality, on-site managed users/mailing list. Fully responsive content layout with quality design & UI elements.
 
-To learn more about Next.js, take a look at the following resources:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Built With
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Next.js (React)
+* Tailwind (CSS Styling)
+* Planetscale (MySQL)
+* Prisma (ORM)
+* Next-Auth (Authentication)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@n0ahpittman](https://twitter.com/n0ahpittman) - noahpittman00@gmail.com
+
+Project Link: [https://github.com/noahpittman/noahpittman](https://github.com/noahpittman/noahpittman)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
