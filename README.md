@@ -37,7 +37,7 @@ Features lazy loaded images with placeholders, contact form with email functiona
 
 Your Name - [@n0ahpittman](https://twitter.com/n0ahpittman) - noahpittman00@gmail.com
 
-Project Link: [https://github.com/noahpittman/noahpittman](https://github.com/noahpittman/noahpittman)
+Project Link: [https://github.com/noahpittman/hd-entertainment](https://github.com/noahpittman/hd-entertainment)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
