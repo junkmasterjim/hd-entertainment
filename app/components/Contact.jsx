@@ -24,7 +24,7 @@ export default function Contact() {
 		e.preventDefault();
 
 		emailjs
-			.sendForm("HD_gmail_01", "HD_TEMPLATE", form.current, "OUH8QIDn0ceYoUaiW")
+			.sendForm("HD_gmail_01", "HD_TEMPLATE", form.current, "84PKxea2cfamTaxov")
 			.then(
 				(result) => {
 					// console.log(result.text);
