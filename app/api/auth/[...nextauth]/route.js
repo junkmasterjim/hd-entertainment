@@ -25,7 +25,7 @@ const handler = NextAuth({
 		},
 	},
 	secret: process.env.NEXTAUTH_SECRET,
-	// url: process.env.NEXTAUTH_URL,
+	url: process.env.NEXTAUTH_URL,
 });
 
 export { handler as GET, handler as POST };
