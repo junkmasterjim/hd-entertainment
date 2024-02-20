@@ -19,7 +19,7 @@ export default function NewsletterCTA() {
 		const { email, userName } = inputValue;
 
 		const data = await axios.post("/api/users", { email, userName });
-		console.log(data?.data.message);
+		console.log(data);
 		if (data?.data.message == undefined) {
 			toast.success("Thanks! Your email has been added.", {
 				style: {

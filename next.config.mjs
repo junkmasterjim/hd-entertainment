@@ -22,6 +22,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "*.hd-next13.vercel.app",
 			},
+			{
+				protocol: "https",
+				hostname: "public-files.gumroad.com",
+			},
 		],
 		formats: ["image/avif", "image/webp"],
 	},

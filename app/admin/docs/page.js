@@ -7,6 +7,7 @@ export default function Page() {
 			<Intro />
 			<Users />
 			<Portfolio />
+			<Products />
 		</div>
 	);
 }
@@ -391,6 +392,193 @@ const Portfolio = () => {
 							src={"/contentActions.png"}
 							placeholder="blur"
 							blurDataURL="/userActions.png"
+							width={360}
+							height={480}
+						/>
+					</div>
+				</div>
+			</div>
+			<div className="divider" />
+		</div>
+	);
+};
+
+const Products = () => {
+	return (
+		<div id="products" className="sm:pt-0 pt-16">
+			<DocsHeading title={"products"} />
+			<div>
+				<p>
+					The products card represents all the{" "}
+					<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+						Product
+					</code>{" "}
+					entries in your PlanetScale database.
+				</p>
+				<div className="leading-8">
+					<p className="underline py-8 pb-4 decoration-primary/25 decoration-2">
+						The product model consists of the following{" "}
+						<strong>required</strong> fields:
+					</p>
+
+					<ul className="pl-4 flex flex-col gap-4">
+						<li>
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								id
+							</code>{" "}
+							: An integer. Generated automatically upon user creation.
+						</li>
+						<li>
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								name
+							</code>{" "}
+							{": A string representing product's name."}
+						</li>
+
+						<li>
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								description
+							</code>{" "}
+							{": A string representing product description."}
+						</li>
+
+						<li>
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								url
+							</code>{" "}
+							{
+								": A string representing product URL. This is the product you add to your cart."
+							}
+						</li>
+
+						<li>
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								imageUrl
+							</code>{" "}
+							: A string containing the gumroad (or dropbox) image URL. This
+							link MUST start with{" "}
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								https://public-files.gumroad.com
+							</code>
+							or{" "}
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								https://dl.dropbox.com/
+							</code>
+							.
+							<br />
+						</li>
+
+						<li>
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								base64
+							</code>{" "}
+							: String generated automatically by the API at runtime when
+							creating content. Most compatible with{" "}
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								.jpg
+							</code>{" "}
+							&{" "}
+							<code className="badge rounded-md p-2 bg-secondary-focus/50 text-primary">
+								.png
+							</code>{" "}
+							files. This is the string used to generate the blurred placeholder
+							while loading. Very important for performance.
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div>
+				<div className="card mt-16 card-bordered p-4 max-w-screen-lg grid sm:grid-cols-2 grid-cols-1">
+					<div>
+						<h2 className="font-semibold text-2xl text-primary w-fit">
+							Create Product
+						</h2>
+						<div className="divider mt-0" />
+						<div className="flex flex-col gap-12">
+							<div className="alert bg-primary text-secondary">
+								<p>Name:</p>
+								<p>• Viewed by the user.</p>
+							</div>
+							<div className="alert bg-primary text-secondary">
+								<p>Desc:</p>
+								<p>• Viewed by the user.</p>
+							</div>
+							<div className="alert bg-primary text-secondary">
+								<p>Price:</p>
+								<p>
+									• Viewed by the user with cent reduced. <br />
+									i.e. 10 = 9.99, 5 = 4.99, 2.50 = 1.49, 0 = 0, etc
+								</p>
+							</div>
+							<div className="alert bg-primary text-secondary">
+								<p>Product URL:</p>
+								<div>
+									<div>
+										<Image
+											alt=""
+											className="w-full rounded-xl"
+											src={"/gumroadLink.png"}
+											placeholder="blur"
+											blurDataURL="/createUser.png"
+											width={360}
+											height={480}
+										/>
+										<p>
+											Copy the product URL from gumroad. This is the page the
+											user will be directed to.
+										</p>
+										<br />
+										<p className="font-bold text-lg">
+											Replace{" "}
+											<code className="badge rounded-md p-2 bg-primary-focus/50 text-secondary">
+												?layout=profile
+											</code>{" "}
+											with{" "}
+											<code className="badge rounded-md p-2 bg-primary-focus/50 text-secondary">
+												?layout=product
+											</code>{" "}
+										</p>
+									</div>
+								</div>
+							</div>
+							<div className="alert bg-primary text-secondary">
+								<p>Image URL:</p>
+								<div>
+									<div>
+										<Image
+											alt=""
+											className="w-full rounded-xl"
+											src={"/gumroadLink.png"}
+											placeholder="blur"
+											blurDataURL="/createUser.png"
+											width={360}
+											height={480}
+										/>
+										<p>
+											Copy the image URL from gumroad. <br />
+											Url must start with
+											<code className="badge rounded-md p-2 bg-primary-focus/50 text-secondary">
+												https://public-files.gumroad.com
+											</code>{" "}
+											or
+											<code className="badge rounded-md p-2 bg-primary-focus/50 text-secondary">
+												https://dl.dropbox.com/
+											</code>
+											.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="pl-4 mt-8 sm:mt-0">
+						<Image
+							alt=""
+							className="w-full rounded-xl sm:mt-4"
+							src={"/addProduct.png"}
+							placeholder="blur"
+							blurDataURL="/createUser.png"
 							width={360}
 							height={480}
 						/>

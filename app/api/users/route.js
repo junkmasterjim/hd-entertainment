@@ -6,41 +6,39 @@ import prismadb from "@/lib/prismadb";
 export async function GET(req) {
 	const session = await getServerSession(req);
 	if (session) {
-		const users = await prismadb.user.findMany();
+		const users = await prismadb.emailSubscriber.findMany();
 		return NextResponse.json(users);
 	} else return NextResponse.json("401: Unauthenticated");
 }
 
 export async function POST(req) {
-	const session = await getServerSession(req);
-	if (session) {
-		try {
-			const body = await req.json();
+	try {
+		const body = await req.json();
 
-			const { name, email } = body;
+		const { name, email } = body;
 
-			if (!email) {
-				return NextResponse.json({
-					route: "[USERS_POST]",
-					status: "ERR 400: BAD REQUEST",
-					message: "Email is required.",
-				});
-			}
-
-			const newUser = await prismadb.user.create({
-				data: {
-					name: `${body.name}` || null,
-					email: `${body.email}`,
-				},
-			});
-			return NextResponse.json(newUser);
-		} catch (err) {
+		if (!email) {
 			return NextResponse.json({
-				message: "500: Internal Server Error",
-				error: err,
+				route: "[USERS_POST]",
+				status: "ERR 400: BAD REQUEST",
+				message: "Email is required.",
 			});
 		}
-	} else return NextResponse.json("401: Unauthenticated");
+
+		const newUser = await prismadb.emailSubscriber.create({
+			data: {
+				name: `${body.name}` || null,
+				email: `${body.email}`,
+			},
+		});
+		return NextResponse.json(newUser);
+	} catch (err) {
+		return NextResponse.json({
+			message: "500: Internal Server Error",
+			error: err,
+		});
+	}
+	return NextResponse.json("401: Unauthenticated");
 }
 
 export async function PATCH(req) {
@@ -67,7 +65,7 @@ export async function PATCH(req) {
 				});
 			}
 
-			const updateUser = await prismadb.user.update({
+			const updateUser = await prismadb.emailSubscriber.update({
 				where: {
 					id: id,
 				},
@@ -100,7 +98,7 @@ export async function DELETE(req) {
 				});
 			}
 
-			const deleteUser = await prismadb.user.delete({
+			const deleteUser = await prismadb.emailSubscriber.delete({
 				where: {
 					id: id,
 				},

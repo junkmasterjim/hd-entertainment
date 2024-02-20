@@ -24,11 +24,11 @@ export async function GET(req) {
 	const session = await getServerSession(req);
 
 	if (session) {
-		const portfolio = await prismadb.portfolioImage.findMany();
-		return NextResponse.json(portfolio);
+		const products = await prismadb.product.findMany();
+		return NextResponse.json(products);
 	} else if (req.headers.get("isFromSite") == "true") {
-		const portfolio = await prismadb.portfolioImage.findMany();
-		return NextResponse.json(portfolio);
+		const products = await prismadb.product.findMany();
+		return NextResponse.json(products);
 	} else return NextResponse.json("401: Unauthenticated");
 }
 
@@ -38,46 +38,63 @@ export async function POST(req) {
 		try {
 			const body = await req.json();
 			console.log(body);
-			const { name, imageUrl, isVideo } = body;
+			const { name, imageUrl, price, url, description } = body;
 
 			if (!name) {
 				return NextResponse.json({
-					route: "[PORTFOLIO_POST]",
+					route: "[PRODUCTS_POST]",
 					status: "ERR 400: BAD REQUEST",
 					message: "Name is required.",
 				});
 			}
 			if (!imageUrl) {
 				return NextResponse.json({
-					route: "[PORTFOLIO_POST]",
+					route: "[PRODUCTS_POST]",
 					status: "ERR 400: BAD REQUEST",
 					message: "Image URL is required.",
 				});
 			}
-
-			if (isVideo == true) {
-				const newImg = await prismadb.portfolioImage.create({
-					data: {
-						name: `${body.name}`,
-						imageUrl: `${body.imageUrl}`,
-						isVideo: true,
-						base64: "",
-					},
+			if (!price) {
+				return NextResponse.json({
+					route: "[PRODUCTS_POST]",
+					status: "ERR 400: BAD REQUEST",
+					message: "Price is required.",
 				});
-				return NextResponse.json(newImg);
-			} else {
-				const base64 = await generateBase64(imageUrl);
-
-				const newImg = await prismadb.portfolioImage.create({
-					data: {
-						name: `${body.name}`,
-						imageUrl: `${body.imageUrl}`,
-						base64: base64,
-					},
-				});
-				return NextResponse.json(newImg);
 			}
+			if (!url) {
+				return NextResponse.json({
+					route: "[PRODUCTS_POST]",
+					status: "ERR 400: BAD REQUEST",
+					message: "Product link is required.",
+				});
+			}
+			if (!description) {
+				return NextResponse.json({
+					route: "[PRODUCTS_POST]",
+					status: "ERR 400: BAD REQUEST",
+					message: "Product link is required.",
+				});
+			}
+
+			const base64 = await generateBase64(imageUrl);
+
+			const newProduct = await prismadb.product.create({
+				data: {
+					name: `${name}`,
+					imageUrl: `${imageUrl}`,
+					description: `${description}`,
+					price: parseFloat(price),
+					url: `${url}`,
+					base64: base64,
+				},
+			});
+
+			console.log(newProduct);
+			console.log("Product created");
+
+			return NextResponse.json(newProduct);
 		} catch (err) {
+			console.log(err);
 			return NextResponse.json({
 				message: "500: Internal Server Error",
 				error: err,
@@ -91,36 +108,60 @@ export async function PATCH(req) {
 	if (session) {
 		try {
 			const body = await req.json();
-			const { name, imageUrl, id } = body;
+			const { name, imageUrl, price, url, description } = body;
 
 			if (!name) {
 				return NextResponse.json({
-					route: "[PORTFOLIO_PATCH]",
+					route: "[PRODUCTS_PATCH]",
 					status: "ERR 400: BAD REQUEST",
 					message: "Name is required.",
 				});
 			}
 			if (!imageUrl) {
 				return NextResponse.json({
-					route: "[PORTFOLIO_PATCH]",
+					route: "[PRODUCTS_PATCH]",
 					status: "ERR 400: BAD REQUEST",
 					message: "Image URL is required.",
+				});
+			}
+			if (!price) {
+				return NextResponse.json({
+					route: "[PRODUCTS_PATCH]",
+					status: "ERR 400: BAD REQUEST",
+					message: "Price is required.",
+				});
+			}
+			if (!url) {
+				return NextResponse.json({
+					route: "[PRODUCTS_PATCH]",
+					status: "ERR 400: BAD REQUEST",
+					message: "Product link is required.",
+				});
+			}
+			if (!description) {
+				return NextResponse.json({
+					route: "[PRODUCTS_PATCH]",
+					status: "ERR 400: BAD REQUEST",
+					message: "Product link is required.",
 				});
 			}
 
 			const base64 = await generateBase64(imageUrl);
 
-			const updateImage = await prismadb.portfolioImage.update({
+			const updateProduct = await prismadb.product.update({
 				where: {
 					id: id,
 				},
 				data: {
-					name: name,
-					imageUrl: imageUrl,
+					name: `${name}`,
+					imageUrl: `${imageUrl}`,
+					description: `${description}`,
+					price: parseFloat(price),
+					url: `${url}`,
 					base64: base64,
 				},
 			});
-			return NextResponse.json(updateImage);
+			return NextResponse.json(updateProduct);
 		} catch (err) {
 			return NextResponse.json({
 				message: "500: Internal Server Error",
@@ -139,19 +180,19 @@ export async function DELETE(req) {
 
 			if (!id) {
 				return NextResponse.json({
-					route: "[PORTFOLIO_DELETE]",
+					route: "[PRODUCTS_DELETE]",
 					status: "ERR 400: BAD REQUEST",
 					message: "ID is required.",
 				});
 			}
 
-			const deleteImage = await prismadb.portfolioImage.delete({
+			const deleteProduct = await prismadb.product.delete({
 				where: {
 					id: id,
 				},
 			});
 
-			return NextResponse.json(deleteImage);
+			return NextResponse.json(deleteProduct);
 		} catch (err) {
 			return NextResponse.json({
 				message: "500: Internal Server Error",

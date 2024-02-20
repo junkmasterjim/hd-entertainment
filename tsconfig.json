@@ -35,7 +35,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/api/auth/users/route.js"
-  ],
+, "app/(publicPages)/shop/page.js"  ],
   "exclude": [
     "node_modules"
   ]
