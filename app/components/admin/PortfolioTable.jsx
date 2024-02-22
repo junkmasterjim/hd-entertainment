@@ -121,7 +121,7 @@ export default function PortfolioTable() {
 
 										// Patch the ID
 										try {
-											await fetch("/api/products", {
+											await fetch("/api/portfolio", {
 												method: "PATCH",
 												headers: { "Content-type": "application/json" },
 												body: JSON.stringify({

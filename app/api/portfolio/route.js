@@ -93,6 +93,18 @@ export async function PATCH(req) {
 			const body = await req.json();
 			const { name, imageUrl, id, updateId } = body;
 
+			if (id && updateId) {
+				const updateImage = await prismadb.product.update({
+					where: {
+						id: id,
+					},
+					data: {
+						id: updateId,
+					},
+				});
+				return NextResponse.json(updateImage);
+			}
+
 			if (!name) {
 				return NextResponse.json({
 					route: "[PORTFOLIO_PATCH]",
