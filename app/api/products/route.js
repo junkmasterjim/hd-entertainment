@@ -98,7 +98,7 @@ export async function POST(req) {
 			return NextResponse.json({
 				message: "500: Internal Server Error",
 				error: err,
-			});
+			}).status(500);
 		}
 	} else return NextResponse.json("401: Unauthenticated");
 }
@@ -190,7 +190,7 @@ export async function PATCH(req) {
 			return NextResponse.json({
 				message: "500: Internal Server Error",
 				error: err,
-			});
+			}).status(500);
 		}
 	} else return NextResponse.json("401: Unauthenticated");
 }
@@ -220,7 +220,7 @@ export async function DELETE(req) {
 		} catch (err) {
 			return NextResponse.json({
 				message: "500: Internal Server Error",
-			});
+			}).status(500);
 		}
 	} else return NextResponse.json("401: Unauthenticated");
 }

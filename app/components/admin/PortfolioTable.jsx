@@ -143,6 +143,7 @@ export default function PortfolioTable() {
 											});
 										} catch (error) {
 											console.error(error);
+											toast.error("There was an error.");
 										}
 									}}
 								>
