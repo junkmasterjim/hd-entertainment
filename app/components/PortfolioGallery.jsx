@@ -20,7 +20,7 @@ export default function PortfolioGallery() {
 			headers: { "Content-type": "application/json", isFromSite: "true" },
 		})
 			.then((res) => res.json())
-			.then((data) => setGallery(data.reverse()));
+			.then((data) => setGallery(data));
 	}, []);
 
 	return gallery.length === 0 ? (

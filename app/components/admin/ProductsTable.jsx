@@ -18,6 +18,7 @@ export default function ProductsTable() {
 	const [priceInput, setPriceInput] = useState("");
 	const [urlInput, setUrlInput] = useState("");
 	const [imageUrlInput, setImageUrlInput] = useState("");
+	const [idInput, setIdInput] = useState("");
 
 	const router = useRouter();
 
@@ -35,6 +36,9 @@ export default function ProductsTable() {
 	};
 	const handleUrlChange = (e) => {
 		setUrlInput(e.target.value);
+	};
+	const handleIdChange = (e) => {
+		setIdInput(e.target.value);
 	};
 
 	const onSubmit = async (e) => {
@@ -109,7 +113,8 @@ export default function ProductsTable() {
 				{/* head */}
 				<thead>
 					<tr>
-						<th></th>
+						<th>ID</th>
+						<th>Preview</th>
 						<th>Name</th>
 						<th>Desc</th>
 						<th>URL</th>
@@ -120,6 +125,80 @@ export default function ProductsTable() {
 					{/* row 1 */}
 					{products?.map((product) => (
 						<tr key={product.id} className="hover">
+							<td>
+								<div>
+									{/* PREVIEW IMAGES */}
+
+									<form
+										onSubmit={async (e) => {
+											e.preventDefault();
+
+											// Patch the ID
+											try {
+												await fetch("/api/products", {
+													method: "PATCH",
+													headers: { "Content-type": "application/json" },
+													body: JSON.stringify({
+														id: product.id,
+														name: product.name,
+														imageUrl: product.imageUrl,
+														updateId: parseInt(idInput),
+													}),
+												})
+													.then((response) => {
+														console.log(response.status);
+														return response.json();
+													})
+													.then((data) => console.log(data));
+
+												router.refresh();
+												toast.success("ID updated.", {
+													duration: 2500,
+												});
+											} catch (error) {
+												console.error(error);
+											}
+										}}
+									>
+										<div className="dropdown">
+											<div
+												tabIndex={0}
+												role="button"
+												className="btn btn-sm btn-square btn-outline"
+											>
+												{product.id}
+											</div>
+											<div
+												tabIndex={0}
+												className="dropdown-content z-[1] card card-compact w-64 p-2 shadow bg-primary text-primary-content"
+											>
+												<div className="card-body">
+													<div className="flex gap-2 items-center">
+														<label htmlFor="id">ID:</label>
+														<input
+															value={idInput}
+															onChange={handleIdChange}
+															required
+															placeholder={product.id}
+															id="id"
+															type="number"
+															min={1}
+															className="input-sm input bg-secondary text-secondary-content"
+														/>
+													</div>
+													<p className="opacity-75 text-xs">
+														Elements are sorted by ID in ascending order.
+													</p>
+
+													<button className="btn btn-secondary btn-xs">
+														Submit
+													</button>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</td>
 							<td>
 								<div>
 									{/* PREVIEW IMAGES */}

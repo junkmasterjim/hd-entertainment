@@ -108,7 +108,23 @@ export async function PATCH(req) {
 	if (session) {
 		try {
 			const body = await req.json();
-			const { name, imageUrl, price, url, description } = body;
+			const { name, imageUrl, price, url, description, updateId, id } = body;
+
+			if (id && updateId) {
+				// console.log("id:  ", id);
+				// console.log("updateId:  ", updateId);
+
+				const updateImage = await prismadb.product.update({
+					where: {
+						id: id,
+					},
+					data: {
+						id: updateId,
+					},
+				});
+				// console.log(updateImage);
+				return NextResponse.json(updateImage);
+			}
 
 			if (!name) {
 				return NextResponse.json({
@@ -124,18 +140,25 @@ export async function PATCH(req) {
 					message: "Image URL is required.",
 				});
 			}
-			if (!price) {
-				return NextResponse.json({
-					route: "[PRODUCTS_PATCH]",
-					status: "ERR 400: BAD REQUEST",
-					message: "Price is required.",
-				});
-			}
 			if (!url) {
 				return NextResponse.json({
 					route: "[PRODUCTS_PATCH]",
 					status: "ERR 400: BAD REQUEST",
 					message: "Product link is required.",
+				});
+			}
+			if (!id) {
+				return NextResponse.json({
+					route: "[PRODUCTS_PATCH]",
+					status: "ERR 400: BAD REQUEST",
+					message: "ID is required.",
+				});
+			}
+			if (!price) {
+				return NextResponse.json({
+					route: "[PRODUCTS_PATCH]",
+					status: "ERR 400: BAD REQUEST",
+					message: "Price is required.",
 				});
 			}
 			if (!description) {
@@ -163,6 +186,7 @@ export async function PATCH(req) {
 			});
 			return NextResponse.json(updateProduct);
 		} catch (err) {
+			console.log(err);
 			return NextResponse.json({
 				message: "500: Internal Server Error",
 				error: err,

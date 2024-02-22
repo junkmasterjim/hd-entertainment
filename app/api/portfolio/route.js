@@ -91,7 +91,7 @@ export async function PATCH(req) {
 	if (session) {
 		try {
 			const body = await req.json();
-			const { name, imageUrl, id } = body;
+			const { name, imageUrl, id, updateId } = body;
 
 			if (!name) {
 				return NextResponse.json({
@@ -120,8 +120,10 @@ export async function PATCH(req) {
 					base64: base64,
 				},
 			});
+			console.log(updateImage);
 			return NextResponse.json(updateImage);
 		} catch (err) {
+			console.log(err);
 			return NextResponse.json({
 				message: "500: Internal Server Error",
 				error: err,

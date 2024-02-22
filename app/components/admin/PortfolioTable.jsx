@@ -15,8 +15,13 @@ export default function PortfolioTable() {
 	const [portfolio, setPortfolio] = useState();
 	const [nameInput, setNameInput] = useState("");
 	const [urlInput, setUrlInput] = useState("");
+	const [idInput, setIdInput] = useState("");
 
 	const router = useRouter();
+
+	const handleIdChange = (e) => {
+		setIdInput(e.target.value);
+	};
 
 	const handleNameChange = (e) => {
 		setNameInput(e.target.value);
@@ -97,7 +102,8 @@ export default function PortfolioTable() {
 				{/* head */}
 				<thead>
 					<tr>
-						<th></th>
+						<th>ID</th>
+						<th>Preview</th>
 						<th>Name</th>
 						<th>Image URL</th>
 						<th>Type</th>
@@ -108,6 +114,76 @@ export default function PortfolioTable() {
 					{/* row 1 */}
 					{portfolio?.map((image) => (
 						<tr key={image.id} className="hover">
+							<td>
+								<form
+									onSubmit={async (e) => {
+										e.preventDefault();
+
+										// Patch the ID
+										try {
+											await fetch("/api/products", {
+												method: "PATCH",
+												headers: { "Content-type": "application/json" },
+												body: JSON.stringify({
+													id: image.id,
+													name: image.name,
+													imageUrl: image.imageUrl,
+													updateId: parseInt(idInput),
+												}),
+											})
+												.then((response) => {
+													console.log(response.status);
+													return response.json();
+												})
+												.then((data) => console.log(data));
+
+											router.refresh();
+											toast.success("ID updated.", {
+												duration: 2500,
+											});
+										} catch (error) {
+											console.error(error);
+										}
+									}}
+								>
+									<div className="dropdown">
+										<div
+											tabIndex={0}
+											role="button"
+											className="btn btn-sm btn-square btn-outline"
+										>
+											{image.id}
+										</div>
+										<div
+											tabIndex={0}
+											className="dropdown-content z-[1] card card-compact w-64 p-2 shadow bg-primary text-primary-content"
+										>
+											<div className="card-body">
+												<div className="flex gap-2 items-center">
+													<label htmlFor="id">ID:</label>
+													<input
+														value={idInput}
+														onChange={handleIdChange}
+														required
+														placeholder={image.id}
+														id="id"
+														type="number"
+														min={1}
+														className="input-sm input bg-secondary text-secondary-content"
+													/>
+												</div>
+												<p className="opacity-75 text-xs">
+													Elements are sorted by ID in ascending order.
+												</p>
+
+												<button className="btn btn-secondary btn-xs">
+													Submit
+												</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</td>
 							<td>
 								<div>
 									<div className="mask mask-circle w-12 h-12">
