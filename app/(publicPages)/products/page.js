@@ -31,7 +31,7 @@ const Page = () => {
 						<div>
 							<a target="_blank" href={product.url}>
 								<img
-									className="object-cover h-full w-full hover:scale-95 duration-300 ease-in-out rounded-lg hover:opacity-75 transition"
+									className="object-cover h-full w-full hover:scale-95 duration-300 ease-in-out rounded-lg hover:opacity-80 transition"
 									src={product.imageUrl}
 									alt={product.name + " image"}
 									onClick={() => {
