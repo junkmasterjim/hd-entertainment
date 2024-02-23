@@ -27,7 +27,7 @@ const Page = () => {
 			<div className="pt-32 md:pt-48 max-w-screen-xl mx-auto p-4 justify-center flex flex-wrap gap-4">
 				{isLoading && <h1>Loading...</h1>}
 				{products.map((product, i) => (
-					<div className=" bg-secondary/25 text-secondary-content backdrop-blur-lg max-w-[18rem] max-h-96 w-full  overflow-hidden grid grid-rows-2 rounded-lg border border-primary/50">
+					<div className=" bg-secondary/25 text-secondary-content backdrop-blur-lg max-w-[18rem] max-h-96 w-full overflow-hidden grid grid-rows-2 rounded-lg border border-primary/25">
 						<div>
 							<a target="_blank" href={product.url}>
 								<img
@@ -53,7 +53,7 @@ const Page = () => {
 									<a
 										target="_blank"
 										href={product.url}
-										className="btn btn-sm btn-secondary"
+										className="btn btn-sm btn-accent"
 									>
 										{product.price === 0 ? "Download" : "Buy Now"}
 									</a>
